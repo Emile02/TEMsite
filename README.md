@@ -9,3 +9,6 @@ npm install
 ```
 npm run serve
 ```
+### Go to website
+
+http://localhost:8080/letem54/
