@@ -5,7 +5,7 @@
         <i class="fas fa-arrow-up fa-lg fa-beat"></i>
 </button>
 </template>
-
+  
 <script>
 
 export default {

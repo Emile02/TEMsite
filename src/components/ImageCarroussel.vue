@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-[50rem] bg-black">
+    <div class="w-full  bg-black h-[20rem] lg:h-[35rem] xl:h-[50rem]">
         <img class="image-to-change w-full h-full object-cover" :src="currentImage" alt="Image 1">
     </div>
 </template>

@@ -8,7 +8,7 @@
     <EventPresentation/>
     <ImageCarroussel/>
     <NewsletterForm/>
-    <FooterSite/>
+    <!-- <FooterSite/> -->
     <BackToPageTop/>
     <!-- <LogoPartenaires/> -->
   </div>
@@ -24,7 +24,7 @@ import EventPresentation from '../components/EventPresentation.vue'
 import ImageCarroussel from '../components/ImageCarroussel.vue'
 import NewsletterForm from '@/components/NewsletterForm.vue'
 // import LogoPartenaires from '@/components/LogoPartenaires.vue'
-import FooterSite from '@/components/FooterSite.vue'
+// import FooterSite from '@/components/FooterSite.vue'
 import BackToPageTop from '@/components/BackToPageTop.vue'
 
 export default {
@@ -39,7 +39,7 @@ export default {
     ImageCarroussel,
     NewsletterForm,
     // LogoPartenaires,
-    FooterSite,
+    // FooterSite,
     BackToPageTop
   }
 }
