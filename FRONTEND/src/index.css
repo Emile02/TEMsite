@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.view-transition-enter-active,
+.view-transition-leave-active {
+  transition: all 0.5s;
+}
+
+.view-transition-enter,
+.view-transition-leave-to {
+  transform: translateX(-100%);
+}
