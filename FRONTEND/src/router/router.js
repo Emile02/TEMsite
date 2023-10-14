@@ -3,6 +3,7 @@ import LoadingSite from '../views/LoadingSite.vue';
 import AccueilSite from '../views/AccueilSite.vue';
 import MenuSite from '../views/MenuOnClick.vue';
 import FormulaireReservation from '../views/PageReservationTable.vue';
+import GaleriePhotos from '../views/GaleriePhotos.vue';
 
 const routes = [
   {
@@ -20,6 +21,10 @@ const routes = [
   {
     path: '/letem54/reservation',
     component: FormulaireReservation
+  },
+  {
+    path: '/letem54/galerie-photos',
+    component: GaleriePhotos
   }
 ];
 
@@ -28,7 +33,7 @@ const router = createRouter({
   routes,
   transition: {
     name: 'view-transition',
-    mode: 'out-in'
+    mode: 'fade'
   }
 });
 

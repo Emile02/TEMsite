@@ -32,12 +32,12 @@
                         <a href="#">Evénements</a>
                     </li>
                     <li>
-                        <a href="#">Galerie photo</a>
+                        <a href="#" class="hover:text-black">Galerie photos</a>
                     </li>
                 </ul>
             </div>
             <div class="relative h-screen">
-                <img src="../../public/backjaune.jpeg" alt="Votre image" class="absolute top-1/2 left-1/2 transform translate-x-50% -translate-y-1/2 w-1/2 h-1/2 hidden lg:block">
+                <img src="../../public/4I8A4055.jpg" alt="Votre image" class="absolute top-1/2 left-1/2 transform translate-x-50% -translate-y-1/2 w-1/2 h-1/2 hidden lg:block">
             </div>
         </div>
     </div>

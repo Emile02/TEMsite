@@ -4,7 +4,7 @@
       class="w-11/12 h-[25rem] mb-5 opacity-70 hover:opacity-100 bg-cover bg-center bg-[url('/public/carroussel1.jpeg')] flex flex-row"
       @mouseenter="enlargeRectangle(1)"
       @mouseleave="resetRectangles"
-      style="transition:all .5s ease-in-out"
+      style="transition:all 1s ease-in-out"
       >
   <div
       @click="showEvent(1)"
@@ -14,11 +14,14 @@
       @mouseleave="resetBlock1"
       style="transition:all .5s ease-in-out"
       >
+      <div
+        class="absolute">
+      <h1 class="font-bold text-white text-3xl"
+        :class="{'hidden' : activeIndex !== 1}"
+        >EVENEMENTS 1
+      </h1>
+      </div>
     </div>
-    <!-- <div
-      class="absolute">
-  <h1 class="font-bold text-3xl">EVENEMENTS</h1>
-    </div> -->
     <div
       @click="showEvent(2)"
       :class="{'hidden pointer-events-none' : activeIndex !== 1 }"
@@ -26,29 +29,34 @@
       class="relative flex justify-center items-center  w-1/3 h-full blur-sm hover:blur-none bg-cover bg-center bg-[url('/public/carroussel2.jpeg')]-200 hover:border-2 hover:border-black"
       @mouseleave="resetBlock2"
       style="transition:all .5s ease-in-out">
+      <div
+        class="absolute">
+      <h1 class="font-bold text-white text-3xl"
+        :class="{'hidden' : activeIndex !== 1}"
+        >EVENEMENTS 2
+      </h1>
+      </div>
     </div>
-    <!-- <div
-      class="absolute">
-  <h1 class="font-bold text-3xl">EVENEMENTS</h1>
-    </div> -->
-    
     <div
       @click="showEvent(3)"
       :class="{'hidden pointer-events-none' : activeIndex !== 1 }"
       :style="{ width: clickOnEvent === 3 ? '100%' : '33.3333%' }"
-      class="w-1/3 h-full blur-sm hover:blur-none bg-cover bg-center bg-[url('/public/carroussel2.jpeg')] hover:border-2 hover:border-black"
+      class="w-1/3 h-full blur-sm flex justify-center items-center hover:blur-none bg-cover bg-center bg-[url('/public/carroussel2.jpeg')] hover:border-2 hover:border-black"
       @mouseleave="resetBlock3"
       style="transition:all .5s ease-in-out">
+      <div>
+      <h1
+        class="font-bold text-white text-3xl"
+        :class="{'hidden' : activeIndex !== 1}"
+        >EVENEMENTS 3
+      </h1>
+      </div>
     </div>
-    <!-- <div
-      class="absolute">
-  <h1 class="font-bold text-3xl">EVENEMENTS</h1>
-    </div> -->
   </div>
   <div
     class="absolute"
     :class="{'hidden' : activeIndex === 1}">
-    <h1 class="font-bold text-3xl">EVENEMENTS</h1>
+    <h1 class="font-light tracking-widest text-white text-3xl">EVENEMENTS</h1>
   </div>
 </div>
 </template>

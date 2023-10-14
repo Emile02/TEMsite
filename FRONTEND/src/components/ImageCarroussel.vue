@@ -1,6 +1,6 @@
 <template>
     <div class="w-full  bg-black h-[20rem] lg:h-[35rem] xl:h-[50rem]">
-        <img class="image-to-change w-full h-full object-cover" :src="currentImage" alt="Image 1">
+        <img class="w-full h-full object-cover" :src="currentImage" alt="Image 1">
     </div>
 </template>
 
@@ -10,10 +10,10 @@
       return {
         currentIndex: 0,
         images: [
-            "http://localhost:8080/carroussel1.jpeg",
-            "http://localhost:8080/carroussel2.jpeg",
-            "http://localhost:8080/carroussel3.jpeg",
-            "http://localhost:8080/carroussel4.jpeg",
+            "http://localhost:8080/4I8A4126.jpg",
+            "http://localhost:8080/4I8A4115.jpg",
+            "http://localhost:8080/4I8A4085.jpg",
+            "http://localhost:8080/4I8A4033.jpg",
         // more images here ...
         ],
       };

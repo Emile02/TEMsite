@@ -23,15 +23,6 @@
           <i class="fa-sharp fa-solid fa-chevron-right md:hidden" style="color: #000000;"></i>
         </div>
       </div>
-    <!-- <div @mousemove="handleMouseMove" @mouseleave="reset" class="relative flex justify-center mt-5 mb-5 md:mb-10 lg:mb-20  md:mt-10 lg:mt-20 w-full xl:h-96 lg:w-1/2 bg-blue-200">
-        <img class="w-full " src="../../public/carroussel1.jpeg" alt="Image 1">
-        <img 
-            v-show="showImage2"
-            class="absolute w-full h-full"
-            src="../../public/carroussel2.jpeg"
-            alt="Image 2"
-            :style="{ clipPath: clipPathStyle }">
-    </div> -->
     </div>
 </template>
 
@@ -95,10 +86,10 @@ a:hover span {
         clipPathStyle: "",
         currentIndex: 0,
       images: [
-        "http://localhost:8080/carroussel1.jpeg",
-        "http://localhost:8080/carroussel2.jpeg",
-        "http://localhost:8080/carroussel3.jpeg",
-        "http://localhost:8080/carroussel4.jpeg",
+        "http://localhost:8080/4I8A4099.jpg",
+        "http://localhost:8080/4I8A4077.jpg",
+        "http://localhost:8080/4I8A4041.jpg",
+        "http://localhost:8080/4I8A4081.jpg",
       ],
       clicked: false,
       };

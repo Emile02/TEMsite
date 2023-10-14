@@ -16,7 +16,6 @@
         }
     };
 
-    // Retrieve all Tutorials from the database.
     exports.findAll = async (req, res) => {
         
     };

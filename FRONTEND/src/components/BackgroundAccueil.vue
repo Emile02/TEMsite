@@ -1,10 +1,10 @@
 <template>
     <div class="mt-64px lg:block lg:mt-0">
-      <img class="w-full h-[35rem] lg:h-screen" :src="currentImage">
-      <div class="bubbles-container">
-        <div :class="{'bg-white': currentIndex === 0}" class="w-5 h-5 border-2 border-white rounded-full m-2 hover:bg-white"></div>
-        <div :class="{'bg-white': currentIndex === 1}" class="w-5 h-5 border-2 border-white rounded-full m-2 hover:bg-white"></div>
-        <div :class="{'bg-white': currentIndex === 2}" class="w-5 h-5 border-2 border-white rounded-full m-2 hover:bg-white"></div>
+      <img class="w-full h-[20rem] md:h-screen object-cover" :src="currentImage">
+      <div class="bubbles-container hidden md:inline-flex">
+        <div :class="{'bg-white': currentIndex === 0}" class="bubble w-5 h-5 border-2 border-white rounded-full m-2" @click="selectImage(0)"></div>
+        <div :class="{'bg-white': currentIndex === 1}" class="bubble w-5 h-5 border-2 border-white rounded-full m-2" @click="selectImage(1)"></div>
+        <div :class="{'bg-white': currentIndex === 2}" class="bubble w-5 h-5 border-2 border-white rounded-full m-2" @click="selectImage(2)"></div>
       </div>
     </div>
 </template>
@@ -15,11 +15,11 @@ export default {
   data() {
     return {
       currentIndex: 0,
+      interval: 3500,
       images: [
-            "http://localhost:8080/carroussel1.jpeg",
-            "http://localhost:8080/carroussel2.jpeg",
-            "http://localhost:8080/carroussel3.jpeg",
-        // more images here ...
+            "http://localhost:8080/4I8A4028.jpg",
+            "http://localhost:8080/4I8A4054.jpg",
+            "http://localhost:8080/4I8A4038.jpg",
         ],
     };
   },
@@ -35,9 +35,12 @@ export default {
       prevImage() {
         this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
     },
+    selectImage(index) {
+      this.currentIndex = index;
     },
+      },
     created() {
-      setInterval(this.nextImage, 3500);
+      setInterval(this.nextImage, this.interval);
     },
 }
 
@@ -54,5 +57,17 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
+.bubble {
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.bubble:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+
 
 </style>
