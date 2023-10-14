@@ -4,6 +4,8 @@ import AccueilSite from '../views/AccueilSite.vue';
 import MenuSite from '../views/MenuOnClick.vue';
 import FormulaireReservation from '../views/PageReservationTable.vue';
 import GaleriePhotos from '../views/GaleriePhotos.vue';
+import cartesMenu from '../views/CartesMenu.vue';
+import ReserverUneTable from '../views/ReserverUneTable.vue';
 
 const routes = [
   {
@@ -25,6 +27,14 @@ const routes = [
   {
     path: '/letem54/galerie-photos',
     component: GaleriePhotos
+  },
+  {
+    path: '/letem54/cartes-menu-restaurant-le-TEM',
+    component: cartesMenu
+  },
+  {
+    path: '/letem54/reserver-une-table',
+    component: ReserverUneTable
   }
 ];
 

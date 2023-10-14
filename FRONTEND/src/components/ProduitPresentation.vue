@@ -7,7 +7,7 @@
               <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-32 2xl:pl-60 mb-2">
                   <img src="../../public/LOGO_BLANC.svg" alt="LOGO COMPLET LE TEM" class="h-full max-h-10">
                   <button>
-                      <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a data-replace="Nos Carte & Menu" class="mt-2 text-lg font-light uppercase "><span>Nos Carte & Menu</span></a></h1>
+                    <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/cartes-menu-restaurant-le-TEM" data-replace="Nos Carte & Menu" class="mt-2 text-lg font-light uppercase "><span>Nos Carte & Menu</span></a></h1>
                   </button>
               </div>
           </div>

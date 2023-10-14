@@ -16,6 +16,7 @@
             "http://localhost:8080/4I8A4033.jpg",
         // more images here ...
         ],
+        currentUrl: window.location.href,
       };
     },
     computed: {

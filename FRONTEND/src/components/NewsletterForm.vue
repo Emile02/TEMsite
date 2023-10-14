@@ -10,10 +10,10 @@
           <h1>S'inscrire</h1>
         </button>
       </div>
-      <div class="mt-1 mx-auto">
+      <div class="mt-1">
         <input type="checkbox" id="checkConfidentiality" name="politiqueConfidentialite" required>
         <label class="ml-2 font-thin" for="checkConfidentiality">
-          J'accepte la <a href="#" class="underline font-bold hover:text-white transition-all duration-500">politique de confidentialité</a>
+          J'accepte la <span class="underline font-bold hover:cursor-pointer hover:text-white transition-all duration-500">politique de confidentialité</span>
         </label>
       </div>
   </form>
@@ -39,12 +39,6 @@ export default {
 </script>
 
 <style scoped>
-
-.fa-circle-question:hover {
-  color: white;
-  cursor: pointer;  
-
-}
 
 .newsletter-form {
   opacity: 1;

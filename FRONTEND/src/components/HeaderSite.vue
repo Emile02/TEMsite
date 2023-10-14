@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
     <header class="bg-black fixed top-0 left-0 right-0 z-10 p-4 flex justify-between items-center z-20"
-    :class="{'bg-black': currentUrl === 'http://localhost:8080/letem54/galerie-photos' || isLogoHidden, 'lg:bg-transparent' : !isLogoHidden && currentUrl !== 'http://localhost:8080/letem54/galerie-photos'}" style="transition:all .5s ease-in-out">
+    :class="{'bg-black': currentUrl === 'http://localhost:8080/letem54/galerie-photos' || currentUrl === 'http://localhost:8080/letem54/reserver-une-table' || isLogoHidden, 'lg:bg-transparent' : !isLogoHidden && currentUrl !== 'http://localhost:8080/letem54/galerie-photos' && currentUrl !== 'http://localhost:8080/letem54/reserver-une-table'}" style="transition:all .5s ease-in-out">
             <button @click="navigateToSecondView" class="flex items-center menu-bar">
               <span class="grid grid-rows-3 gap-2.5 lg:gap-3">
                 <span class="block w-10 h-0.5"></span>
@@ -12,7 +12,7 @@
             </button>
             <img src="../../public/LOGO_BLANC.svg" all="LOGO COMPLET LE TEM" id="logo1" class="max-h-10 md:hidden flex justify-center items-center">
       <img src="../../public/LOGO_BLANC_LETEM.svg" alt="LOGO  LE TEM" id="logo2"
-        class="h-full max-h-10 hidden md:block" :class="{'lg:invisible' : !isLogoHidden && currentUrl !== 'http://localhost:8080/letem54/galerie-photos'}">
+        class="h-full max-h-10 hidden md:block" :class="{'lg:invisible' : !isLogoHidden && currentUrl !== 'http://localhost:8080/letem54/galerie-photos' && currentUrl !== 'http://localhost:8080/letem54/reserver-une-table'}">
       <div class="flex">
         <button>
           <span class="text-xl text-white underline underline-offset-8 hover:text-yellow-200 mx-1 md:mx-3 lg:mx-5" style="transition:all .5s ease-in-out">Réserver</span>
@@ -26,7 +26,7 @@
       </div>
       <img src="../../public/LOGO_BLANC.svg" all="LOGO COMPLET LE TEM" id="logo3"
         class="hidden h-48 absolute left-1/2 transform -translate-x-1/2 z-2"
-        :class="{ 'lg:block': !isLogoHidden, 'invisible': currentUrl === 'http://localhost:8080/letem54/galerie-photos'}"  style="bottom: -155px; transition:all .5s ease-in-out;">
+        :class="{ 'lg:block': !isLogoHidden, 'invisible': currentUrl === 'http://localhost:8080/letem54/galerie-photos' || currentUrl === 'http://localhost:8080/letem54/reserver-une-table'}"  style="bottom: -155px; transition:all .5s ease-in-out;">
     </header>
 </template>
 
@@ -69,12 +69,6 @@ export default {
       } else {
         this.isLogoHidden = false; // Afficher le logo lorsque le défilement est inférieur à 500 pixels
       }
-    },
-    navigateToSecondView() {    
-      this.$router.push('/letem54/menu');
-    },
-    OpenPageOffrir() {
-      window.open('http://localhost:8080/letem54/offrir', '_blank');
     },
   },
 }
