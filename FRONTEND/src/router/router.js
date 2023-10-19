@@ -6,6 +6,7 @@ import FormulaireReservation from '../views/PageReservationTable.vue';
 import GaleriePhotos from '../views/GaleriePhotos.vue';
 import cartesMenu from '../views/CartesMenu.vue';
 import ReserverUneTable from '../views/ReserverUneTable.vue';
+import OffrirUnBonCadeau from '../views/OffrirUnBonCadeau.vue';
 
 const routes = [
   {
@@ -35,6 +36,10 @@ const routes = [
   {
     path: '/letem54/reserver-une-table',
     component: ReserverUneTable
+  },
+  {
+    path: '/letem54/offrir-un-bon-cadeau',
+    component: OffrirUnBonCadeau
   }
 ];
 

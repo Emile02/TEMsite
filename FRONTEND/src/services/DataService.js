@@ -10,6 +10,10 @@ class TutorialDataService {
     return http.post("/TEM", { email: data }, { headers: { 'Content-Type': 'application/json' }});
   }
 
+  sendGiftCard(data) {
+    return http.post("/TEM/giftcard", data, { headers: { 'Content-Type': 'application/json' }});
+  }
+
   update(id, data) {
     return http.put(`/TEM/${id}`, data);
   }

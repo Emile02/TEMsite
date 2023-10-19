@@ -32,6 +32,40 @@ app.post('/api/TEM', (req, res) => {
     res.status(201).json({ message: 'Adresse e-mail enregistrée avec succès.' });
 });
 
+const nodemailer = require('nodemailer');
+
+// Créez un transporteur SMTP (Simple Mail Transfer Protocol) pour l'envoi d'e-mails
+const transporter = nodemailer.createTransport({
+  host: "smtp-relay.sendinblue.com",
+  port: 587,
+  auth: {
+    user: 'corviniemile@gmail.com',
+    pass: 'FxD9RTOnZ7szyCUQ'
+  }
+});
+
+
+app.post('/api/TEM/giftcard', (req, res) => {
+    const mailOptions = {
+        from: 'corviniemile@gmail.com',
+        to: req.body.email,
+        subject: 'Carte cadeau restaurant Le Tem',
+        text: JSON.stringify(req.body)
+    };
+    console.log("req.body", req.body);
+
+    // transporter.sendMail(mailOptions, (error, info) => {
+    //     if (error) {
+    //         console.log('Erreur lors de l\'envoi de l\'e-mail :', error);
+    //     } else {
+    //         console.log('E-mail envoyé avec succès :', info.response);
+    //     }
+    // });
+
+    res.status(201).json({ message: 'Carte cadeau envoyée avec succès.' });
+});
+
+
 let photoDir = readDir('./public');
 console.log("photoDir", photoDir);
 
