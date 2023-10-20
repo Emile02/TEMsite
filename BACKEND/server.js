@@ -46,13 +46,35 @@ const transporter = nodemailer.createTransport({
 
 
 app.post('/api/TEM/giftcard', (req, res) => {
-    const mailOptions = {
-        from: 'corviniemile@gmail.com',
-        to: req.body.email,
-        subject: 'Carte cadeau restaurant Le Tem',
-        text: JSON.stringify(req.body)
-    };
+
+    // mail 1 = Envoi d'un mail au client qui offre les informations pour la carte cadeau
+    if (req.body.sendEmailToGiftReveiver === false) {
+        const sendMailToGiftSendOnly = {
+            from: 'corviniemile@gmail.com',
+            to: req.body.email,
+            subject: 'Vous avez commandé une carte cadeau au restaurant Le TEM',
+            // Vous allez la recevoir par courrier postal dans les prochains jours.
+            text: JSON.stringify(req.body)
+        };
+    } else if (req.body.sendEmailToGiftReveiver === true) {
+        const sendWarnMailToGiftSender = {
+            from: 'corviniemile@gmail.com',
+            to: req.body.email,
+            subject: 'Vous avez offert une carde cardeau au restaurant Le TEM à ' + req.body.prenom + ' ' + req.body.nom + ' !',
+            // Vous allez la recevoir par courrier postal dans les prochains jours.
+            text: JSON.stringify(req.body)
+        };
+        const sendWarnMailToGiftReceiver = {
+            from: 'corviniemile@gmail.com',
+            to: req.body.emailReceiver,
+            subject: req.body.prenom + ' ' + req.body.nom + ' ' + 'vous offre une carde cardeau au restaurant Le TEM !',
+            // Vous allez la recevoir par courrier postal dans les prochains jours.
+            text: JSON.stringify(req.body)
+        };
+    }
+
     console.log("req.body", req.body);
+    // mail 2 = envoi d'un mail à la personne qui recois et un mail à la personne qui à envoyé pour lui notifier de son envois
 
     // transporter.sendMail(mailOptions, (error, info) => {
     //     if (error) {

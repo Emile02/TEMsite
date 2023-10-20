@@ -30,46 +30,49 @@
     </div>
   
     
-    <div v-if="afficherFormulaire" class="fixed inset-0 flex items-center justify-center z-50">
+    <div v-if="!afficherFormulaire" class="fixed inset-0 flex items-center justify-center z-50">
       <div class="modal">
-        <form @submit.prevent="envoyerFormulaire" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-64">
+        <form @submit.prevent="envoyerFormulaire" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <h1 class="text-2xl mb-4 text-center">Formulaire de bon cadeau</h1>
+          <div class="flex flex-row space-x-4 items-center">
+            <div class="#1">
+          <h2 class="text-xl font-bold mb-4 text-center">Vos Informations:</h2>
           <div class="mb-4">
-            <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Nom :</label>
+            <label for="senderLastname" class="block text-gray-700 text-sm font-bold mb-2">Nom :</label>
             <input
               type="text"
-              id="nom"
-              v-model="nom"
+              id="senderLastname"
+              v-model="senderLastname"
               required
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div class="mb-4">
-            <label for="prenom" class="block text-gray-700 text-sm font-bold mb-2">Prénom :</label>
+            <label for="senderName" class="block text-gray-700 text-sm font-bold mb-2">Prénom :</label>
             <input
               type="text"
-              id="prenom"
-              v-model="prenom"
+              id="senderName"
+              v-model="senderName"
               required
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div class="mb-4">
-            <label for="adresse" class="block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
+            <label for="senderAdress" class="block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
             <input
               type="text"
-              id="adresse"
-              v-model="adresse"
+              id="senderAdress"
+              v-model="senderAdress"
               required
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div class="mb-4">
-            <label for="telephone" class="block text-gray-700 text-sm font-bold mb-2">Numéro de téléphone :</label>
+            <label for="senderPhone" class="block text-gray-700 text-sm font-bold mb-2">Numéro de téléphone :</label>
             <input
               type="tel"
-              id="telephone"
-              v-model="telephone"
+              id="senderPhone"
+              v-model="senderPhone"
               placeholder="0XXXXXXXXX"
               pattern="[0-9]{10}"
               required
@@ -77,18 +80,61 @@
             />
           </div>
           <div class="mb-4">
-            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+            <label for="senderEmail" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
             <input
               type="email"
-              id="email"
-              v-model="email"
+              id="senderEmail"
+              v-model="senderEmail"
               pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
               required
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
+        </div>
+        <div class="#2">
+          <h2 class="text-xl font-bold mb-4 text-center">Ses Informations:</h2>
           <div class="mb-4">
-            <label for="montant" class="block text-gray-700 text-sm font-bold mb-2">Montant du bon : (en €)</label>
+            <label for="receiverLastname" class="block text-gray-700 text-sm font-bold mb-2">Nom :</label>
+            <input
+              type="text"
+              id="receiverLastname"
+              v-model="receiverLastname"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="receiverName" class="block text-gray-700 text-sm font-bold mb-2">Prénom :</label>
+            <input
+              type="text"
+              id="receiverName"
+              v-model="receiverName"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="mb-4 flex justify-center">
+            <label for="sendEmailToGiftReceiver" class="text-sm pr-2" title="Nous avertirons votre gifted de son cadeau!">Avertir le destinaire ?</label>
+            <input
+              type="checkbox"
+              id="sendEmailToGiftReceiver"
+              v-model="sendEmailToGiftReceiver"
+              value="dog"/>
+          </div>
+          <div :class="{'invisible' : !sendEmailToGiftReceiver}" class="mb-4">
+            <label for="receiverEmail" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+            <input
+              type="text"
+              id="receiverEmail"
+              v-model="receiverEmail"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+        </div>
+        </div>
+          <div class="mb-4">
+            <label for="montant" class="text-center block text-gray-700 text-sm font-bold mb-2">Montant du bon : (en €)</label>
             <input
               type="number"
               id="montant"  
@@ -98,7 +144,7 @@
             />
           </div>
           <div class="mb-4">
-            <label for="comment" class="block text-gray-700 text-sm font-bold mb-2">Commentaire</label>
+            <label for="comment" class="text-center block text-gray-700 text-sm font-bold mb-2">Commentaire</label>
             <input
               type="text"
               id="comment"  
@@ -107,6 +153,7 @@
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
+          
           <div class="flex flex-row space-x-4 flex items-center justify-center">
           <div class="flex items-center justify-center">
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Envoyer</button>
@@ -126,40 +173,67 @@
   export default {
     data() {
       return {
-        nom: "",
-        prenom: "",
-        adresse: "",
-        telephone: "",
-        email: "",
+        afficherFormulaire: false,
+        senderLastname: "",
+        senderName: "",
+        senderAdress: "",
+        senderPhone: "",
+        senderEmail: "",
         montant: 0,
         comment: "",
-        afficherFormulaire: false
+        receiverLastname: "",
+        receiverName: "",
+        receiverEmail: "",
+        showReceiverEmail: false,
+        sendEmailToGiftReceiver: false,
       };
     },
+    
     methods: {
       envoyerFormulaire() {
         const data = {
-          nom: this.nom,
-          prenom: this.prenom,
-          adresse: this.adresse,
-          telephone: this.telephone,
-          email: this.email,
+          senderLastname: this.senderLastname,
+          senderName: this.senderName,
+          senderAdress: this.senderAdress,
+          senderPhone: this.senderPhone,
+          senderEmail: this.senderEmail,
           montant: this.montant,
-          comment: this.comment
+          comment: this.comment,
+          receiverLastname: this.receiverLastname,
+          receiverName: this.receiverName,
+          receiverEmail: this.receiverEmail,
+          sendEmailToGiftReceiver: this.sendEmailToGiftReceiver,
         };
         
-        this.nom = "";
-        this.prenom = "";
-        this.adresse = "";
+        this.senderLastname = "";
+        this.senderName = "";
+        this.senderAdress = "";
         this.telephone = "";
-        this.email = "";
+        this.senderEmail = "";
         this.montant = "";
         this.comment = "";
+        this.receiverLastname = "";
+        this.receiverName = "";
+        this.receiverEmail = "";
+        this.showReceiverEmail = false;
+        this.sendEmailToGiftReceiver = false;
 
         DataService.sendGiftCard(data);
         // console.log('Formulaire soumis');
 
         this.afficherFormulaire = false;
+      }
+    },
+    watch: {
+      senderChecked: function(newVal) {
+        if (newVal) {
+          this.receiverChecked = false;
+        }
+      },
+      showReceiverEmail: function(newVal) {
+        if (newVal) {
+          this.sendEmailToGiftReceiver = false;
+        }
       }
     }
   };
