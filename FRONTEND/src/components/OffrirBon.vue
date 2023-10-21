@@ -30,7 +30,7 @@
     </div>
   
     
-    <div v-if="!afficherFormulaire" class="fixed inset-0 flex items-center justify-center z-50">
+    <div v-if="afficherFormulaire" class="fixed inset-0 flex items-center justify-center z-50">
       <div class="modal">
         <form @submit.prevent="envoyerFormulaire" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <h1 class="text-2xl mb-4 text-center">Formulaire de bon cadeau</h1>

@@ -7,6 +7,7 @@ import GaleriePhotos from '../views/GaleriePhotos.vue';
 import cartesMenu from '../views/CartesMenu.vue';
 import ReserverUneTable from '../views/ReserverUneTable.vue';
 import OffrirUnBonCadeau from '../views/OffrirUnBonCadeau.vue';
+import RestaurantAcces from '../views/RestaurantAcces.vue';
 
 const routes = [
   {
@@ -40,6 +41,10 @@ const routes = [
   {
     path: '/letem54/offrir-un-bon-cadeau',
     component: OffrirUnBonCadeau
+  },
+  {
+    path: '/letem54/acces-restaurant-le-tem-nancy',
+    component: RestaurantAcces
   }
 ];
 
