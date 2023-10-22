@@ -4,8 +4,8 @@
       <HeaderSite/>
       <TemPresentation/>
       <MapTem/>
-      <!-- <FooterSite/>
-      <BackToPageTop/> -->
+      <FooterSite/>
+      <BackToPageTop/>
       
     </div>
   </template>
@@ -14,8 +14,8 @@
   import HeaderSite from '../components/HeaderSite.vue'
   import TemPresentation from '../components/TemPresentation.vue'
   import MapTem from "@/components/MapTem.vue";
-  // import FooterSite from '@/components/FooterSite.vue'
-  // import BackToPageTop from '@/components/BackToPageTop.vue'
+  import FooterSite from '@/components/FooterSite.vue'
+  import BackToPageTop from '@/components/BackToPageTop.vue'
 
 
   export default {
@@ -24,8 +24,8 @@
         HeaderSite,
         TemPresentation,
         MapTem,
-        // FooterSite,
-        // BackToPageTop
+        FooterSite,
+        BackToPageTop
       },
   } 
 </script>
