@@ -8,6 +8,7 @@ import cartesMenu from '../views/CartesMenu.vue';
 import ReserverUneTable from '../views/ReserverUneTable.vue';
 import OffrirUnBonCadeau from '../views/OffrirUnBonCadeau.vue';
 import RestaurantAcces from '../views/RestaurantAcces.vue';
+import EvenementPage from '../views/EvenementPage.vue';
 
 const routes = [
   {
@@ -45,7 +46,12 @@ const routes = [
   {
     path: '/letem54/acces-restaurant-le-tem-nancy',
     component: RestaurantAcces
+  },
+  {
+    path: '/letem54/evenements-restaurant-le-tem',
+    component: EvenementPage
   }
+
 ];
 
 const router = createRouter({

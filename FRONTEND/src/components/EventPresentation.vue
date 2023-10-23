@@ -1,5 +1,23 @@
 <template>
-  <div class="flex justify-center items-center relative">
+  <div class="mb-5 md:mb-10 lg:mb-20">
+        <h1 class="flex justify-center pt-10 mt-10 text-xl font-bold md:text-2xl lg:text-3xl md:mt-10 lg:mt-20" style="transition:all 1s ease-in-out">Restaurant Le TEM</h1>
+        <h2 class="flex justify-center mt-4 text-xl font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10 mb-10" style="transition:all 1s ease-in-out">Cartes & Menus (Trouver un texte pour remplacer celui ci-dessous)</h2>
+        <p class="font-light pl-5 pr-5 mt-4 text-justify md:pl-10 md:pr-10 md:mt-5 lg:pr-20 lg:pl-20 lg:mt-10 xl:pr-48 xl:pl-48 2xl:pr-72 2xl:pl-72 2xl:text-lg 3xl:pr-[350px] 3xl:pl-[350px]">
+          Le Tem est un <strong class="font-bold">restaurant semi-gastronomique</strong> situé au <strong class="font-bold">cœur de la Vieille Ville de Nancy</strong>, offrant une expérience culinaire de qualité. Nous mettons un point d'honneur à travailler avec des <strong class="font-bold">produits frais</strong> et des <strong class="font-bold">producteurs locaux</strong> pour garantir une qualité irréprochable à nos plats ! Notre équipe de cuisine allie <strong class="font-bold">savoir-faire</strong> et <strong class="font-bold">créativité</strong> pour vous faire découvrir de nouvelles saveurs et des dressages élaborés.
+        </p>
+        <p class="font-light pl-5 pr-5 mt-4 text-justify md:pl-10 md:pr-10 lg:pr-20 lg:pl-20 lg:mt-8 xl:pr-48 xl:pl-48 2xl:pr-72 2xl:pl-72 2xl:text-lg 3xl:pr-[350px] 3xl:pl-[350px]">
+          Dans une <strong class="font-bold">ambiance conviviale</strong>, Le Tem est l'endroit idéal pour des <strong class="font-bold">déjeuners d'affaires</strong>, des <strong class="font-bold">dîners romantiques</strong>, des <strong class="font-bold">anniversaires</strong> ou des <strong class="font-bold">pots de thèse</strong>. Nous privatisons le restaurant pour <strong class="font-bold">vos évènements</strong> !
+        </p>
+        <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-48 2xl:pl-72 3xl:pl-[350px]">
+            <img src="../../public/LOGO_NOIR.svg" all="LOGO COMPLET LE TEM" class="h-full max-h-10 pr-2">
+        <button class="w-48">
+            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a data-replace="Réserver une table" class="mt-2 text-lg font-light uppercase"><span>Réserver une table</span></a></h1>
+        </button>
+        </div>
+        <h2 class="flex justify-center mt-4 text-xl font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10 mb-10" style="transition:all 1s ease-in-out">DECOUVREZ NOS EVENEMENTS</h2>
+    </div>
+    <!-- Là il nous faudrais des photos du restaurant ! (format rectangle) -->
+  <div class="pt-10 flex justify-center items-center relative">
   <div
       class="w-11/12 h-[25rem] mb-5 opacity-70 hover:opacity-100 bg-cover bg-center bg-[url('/public/carroussel1.jpeg')] flex flex-row"
       @mouseenter="enlargeRectangle(1)"

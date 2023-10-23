@@ -4,8 +4,9 @@
     <BackgroundAccueil/>
     <TemPresentation/>
     <ProduitPresentation/>
-    <MenuChoice/>
-    <EventPresentation/>
+    <AccueilEvenement/>
+    <!-- <MenuChoice/> -->
+    <!-- <EventPresentation/> -->
     <ImageCarroussel/>
     <NewsletterForm/>
     <FooterSite/>
@@ -19,8 +20,9 @@ import HeaderSite from '../components/HeaderSite.vue'
 import BackgroundAccueil from '../components/BackgroundAccueil.vue'
 import TemPresentation from '../components/TemPresentation.vue'
 import ProduitPresentation from '../components/ProduitPresentation.vue'
-import MenuChoice from '../components/MenuChoice.vue'
-import EventPresentation from '../components/EventPresentation.vue'
+import AccueilEvenement from '@/components/AccueilEvenement.vue'
+// import MenuChoice from '../components/MenuChoice.vue'
+// import EventPresentation from '../components/EventPresentation.vue'
 import ImageCarroussel from '../components/ImageCarroussel.vue'
 import NewsletterForm from '@/components/NewsletterForm.vue'
 // import LogoPartenaires from '@/components/LogoPartenaires.vue'
@@ -34,8 +36,9 @@ export default {
     BackgroundAccueil,
     TemPresentation,
     ProduitPresentation,
-    MenuChoice,
-    EventPresentation,
+    AccueilEvenement,
+    // MenuChoice,
+    // EventPresentation,
     ImageCarroussel,
     NewsletterForm,
     // LogoPartenaires,

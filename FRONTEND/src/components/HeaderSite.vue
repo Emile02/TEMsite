@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
-    <header class="bg-black fixed top-0 left-0 right-0 z-10 p-4 flex justify-between items-center z-20"
-    :class="{'bg-black': currentUrl === 'http://localhost:8080/letem54/galerie-photos' || currentUrl === 'http://localhost:8080/letem54/reserver-une-table' || currentUrl === 'http://localhost:8080/letem54/offrir-un-bon-cadeau' || currentUrl === 'http://localhost:8080/letem54/acces-restaurant-le-tem-nancy' || isLogoHidden, 'lg:bg-transparent' : !isLogoHidden && currentUrl !== 'http://localhost:8080/letem54/galerie-photos' && currentUrl !== 'http://localhost:8080/letem54/reserver-une-table' && currentUrl !== 'http://localhost:8080/letem54/offrir-un-bon-cadeau' && currentUrl !== 'http://localhost:8080/letem54/acces-restaurant-le-tem-nancy'}" style="transition:all .5s ease-in-out">
+    <header class="bg-gray-800 fixed top-0 left-0 right-0 z-10 p-4 flex justify-between items-center z-20"
+    :class="{'bg-gray-800': currentUrl === 'http://localhost:8080/letem54/galerie-photos' || currentUrl === 'http://localhost:8080/letem54/reserver-une-table' || currentUrl === 'http://localhost:8080/letem54/offrir-un-bon-cadeau' || currentUrl === 'http://localhost:8080/letem54/acces-restaurant-le-tem-nancy' || isLogoHidden, 'lg:bg-transparent' : !isLogoHidden && currentUrl !== 'http://localhost:8080/letem54/galerie-photos' && currentUrl !== 'http://localhost:8080/letem54/reserver-une-table' && currentUrl !== 'http://localhost:8080/letem54/offrir-un-bon-cadeau' && currentUrl !== 'http://localhost:8080/letem54/acces-restaurant-le-tem-nancy'}" style="transition:all .5s ease-in-out">
             <button @click="navigateToView('/letem54/menu')" class="flex items-center menu-bar">
               <span class="grid grid-rows-3 gap-2.5 lg:gap-3">
                 <span class="block w-10 h-0.5"></span>
