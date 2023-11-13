@@ -7,7 +7,7 @@
               <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-32 2xl:pl-60 mb-2">
                   <img src="../../public/LOGO_BLANC.svg" alt="LOGO COMPLET LE TEM" class="h-full max-h-10">
                   <button>
-                    <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/cartes-menu-restaurant-le-TEM" data-replace="Nos Carte & Menu" class="mt-2 text-lg font-light uppercase "><span>Nos Carte & Menu</span></a></h1>
+                    <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/cartes-menu-restaurant-le-TEM" data-replace="Nos Cartes & Menus"><span>Nos Cartes & Menus</span></a></h1>
                   </button>
               </div>
           </div>
@@ -26,9 +26,9 @@
     </div>
 </template>
 
-<style scoped>
+<style>
 
-a {
+/* a {
   overflow: hidden;
   position: relative;
   display: inline-block;
@@ -42,7 +42,7 @@ a::after {
   left: 0;
 }
 a::before {
-  background-color: #ffffff;
+  background-color: #000000;
   height: 2px;
   bottom: 0;
   transform-origin: 100% 50%;
@@ -56,7 +56,7 @@ a::after {
   transform-origin: 100% 50%;
   transform: translate3d(200%, 0, 0);
   transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-  color: #ffffff;
+  color: #000000;
 }
 
 a:hover::before {
@@ -74,7 +74,8 @@ a span {
 
 a:hover span {
   transform: translate3d(-200%, 0, 0);
-}
+} */
+
 
 </style>
   

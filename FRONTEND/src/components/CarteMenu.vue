@@ -47,7 +47,7 @@
 
 <style>
 
-a {
+/* a {
   overflow: hidden;
   position: relative;
   display: inline-block;
@@ -93,6 +93,6 @@ a span {
 
 a:hover span {
   transform: translate3d(-200%, 0, 0);
-}
+} */
 
 </style>

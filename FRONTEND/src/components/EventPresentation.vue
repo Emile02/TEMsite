@@ -16,8 +16,7 @@
         </div>
         <h2 class="flex justify-center mt-4 text-xl font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10 mb-10" style="transition:all 1s ease-in-out">DECOUVREZ NOS EVENEMENTS</h2>
     </div>
-    <!-- Là il nous faudrais des photos du restaurant ! (format rectangle) -->
-  <div class="pt-10 flex justify-center items-center relative">
+  <!-- <div class="pt-10 flex justify-center items-center relative">
   <div
       class="w-11/12 h-[25rem] mb-5 opacity-70 hover:opacity-100 bg-cover bg-center bg-[url('/public/carroussel1.jpeg')] flex flex-row"
       @mouseenter="enlargeRectangle(1)"
@@ -76,7 +75,7 @@
     :class="{'hidden' : activeIndex === 1}">
     <h1 class="font-light tracking-widest text-white text-3xl">EVENEMENTS</h1>
   </div>
-</div>
+</div> -->
 </template>
 
 <script>

@@ -4,10 +4,10 @@
                 <div class="flex flex-col pb-2 md:pr-44">
                     <h1 class="underline underline-offset-8 mb-3 font-bold text-xl">Réserver & Offrir:</h1>
                     <button class="text-l hover:text-yellow-200 my-1" style="transition:all .2s ease-in-out">
-                        <h1><i class="invisible">_</i>Réserver une table <i class="logo mx-2 fas fa-caret-right fa-lg"></i></h1>    
+                        <h1 @click="navigateToView('/letem54/reserver-une-table')"><i class="invisible">_</i>Réserver une table <i class="logo mx-2 fas fa-caret-right fa-lg"></i></h1>
                     </button>
                     <button class="text-l hover:text-yellow-200 mt-1" style="transition:all .2s ease-in-out">
-                        <h1>Offrir un bon cadeau<i class="logo mx-2 fas fa-caret-right fa-lg"></i></h1>
+                        <h1 @click="navigateToView('/letem54/offrir-un-bon-cadeau')">Offrir un bon cadeau<i class="logo mx-2 fas fa-caret-right fa-lg"></i></h1>
                     </button>
                 </div>
                     <a href="http://localhost:8080/letem54/accueil" class="flex justify-center hover:scale-90" style="transition:all .5s ease-in-out">
@@ -34,31 +34,31 @@
             <div class="flex flex-col md:flex-row md:tracking-wide items-center">
                 <a href="http://localhost:8080/letem54/accueil">
                     <button>
-                        <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide">Accueil</h1>
+                        <h1 @click="navigateToView('/letem54/accueil')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide">Accueil</h1>
                     </button>
                 </a>
                     <span class="block md:w-0.5 md:h-5"></span>
                 <a>
                     <button>
-                        <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Carte & Menus</h1>
+                        <h1 @click="navigateToView('/letem54/cartes-menu-restaurant-le-TEM')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Carte & Menus</h1>
                     </button>
                 </a>
                     <span class="block md:w-0.5 md:h-5"></span>
                 <a>
                 <button>
-                    <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Notre Histoire</h1>
+                    <h1 @click="navigateToView('/letem54/evenements-restaurant-le-tem')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Evènements</h1>
                 </button>
                 </a>
                     <span class="block md:w-0.5 md:h-5"></span>
                 <a>
                 <button>
-                    <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Evènements</h1>
+                    <h1 @click="navigateToView('/letem54/galerie-photos')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Galerie Photo</h1>
                 </button>
                 </a>
                     <span class="block md:w-0.5 md:h-5"></span>
                 <a>
                 <button>
-                    <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Galerie Photo</h1>
+                    <h1 @click="navigateToView('/letem54/acces-restaurant-le-tem-nancy')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Accès</h1>
                 </button>
             </a>
             </div>
@@ -75,3 +75,14 @@
 }
 
 </style>
+
+<script>
+    export default {
+        methods: {
+            navigateToView(string) {
+                this.$router.push(string);
+            }
+        }
+    }
+
+</script>
