@@ -1,4 +1,4 @@
-<!-- GaleriesPhotos.vue -->
+<!-- RestaurantAcces.vue -->
 <template>
     <div id="restau-acces">
       <HeaderSite/>
@@ -16,7 +16,6 @@
   import MapTem from "@/components/MapTem.vue";
   import FooterSite from '@/components/FooterSite.vue'
   import BackToPageTop from '@/components/BackToPageTop.vue'
-
 
   export default {
       name: 'RestaurantAcces',

@@ -27,7 +27,7 @@
       :class="{ 'lg:block': !isLogoHidden, 'invisible': currentUrl === 'http://localhost:8080/letem54/galerie-photos' || currentUrl === 'http://localhost:8080/letem54/reserver-une-table' || currentUrl === 'http://localhost:8080/letem54/offrir-un-bon-cadeau' || currentUrl === 'http://localhost:8080/letem54/acces-restaurant-le-tem-nancy'}"  style="bottom: -155px; transition:all .5s ease-in-out;">
     </header>
     <div v-if="showmenu" class="menu-slide">
-      <div class="z-20 fixed top-[72px] opacity-90 h-48 border-2 border-black w-full bg-white flex justify-center items-center">
+      <div class="z-20 fixed top-[72px] opacity-95 h-48 border-2 border-black w-full bg-white flex justify-center items-center">
         <ul class="flex flex-row space-x-8 text-xl font-bold">
           <button @click="navigateToView('/letem54/accueil')"><li>
             <h1 class="text-black hover:text-tem-yellow" :class="{'text-tem-yellow': currentUrl === 'http://localhost:8080/letem54/accueil'}">Accueil</h1>

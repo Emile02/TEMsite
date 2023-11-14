@@ -13,13 +13,15 @@
   <script>
   import { ref, onMounted } from 'vue';
   import * as L from 'leaflet';
-  
+  import mitt from 'mitt';
+
+  const emitter = mitt();
   export default {
     setup() {
       const map = ref(null);
-
+      
       onMounted(() => {
-        let mapInstance = L.map('map', {
+      let mapInstance = L.map('map', {
           center: [48.695327005647925, 6.181040152792563],
           zoom: 10,
           scrollWheelZoom: false,
@@ -39,8 +41,11 @@
         L.marker([48.695327005647925, 6.181040152792563], {icon: greenIcon}).addTo(mapInstance)
           .bindPopup(document.getElementById('div-to-use'))
           .openPopup()
-          
+          mapInstance.whenReady(() => {
+        // Émettre l'événement personnalisé avec mapInstance
+            emitter.emit('map-loaded', mapInstance);
       });
+        });
 
       return { map };
     },

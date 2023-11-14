@@ -7,22 +7,17 @@
         <h2 class="flex justify-center mt-4 text-sm font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10" style="transition: all 1s ease-in-out">
           Pour offrir à un proche !
         </h2>
+        <p class="font-light pl-5 pr-5 mt-4 text-justify md:pl-10 md:pr-10 md:mt-5 lg:pr-20 lg:pl-20 lg:mt-10 xl:pr-48 xl:pl-48 2xl:pr-72 2xl:pl-72 2xl:text-lg 3xl:pr-[350px] 3xl:pl-[350px]">
+          Le Tem est un <strong class="font-bold">restaurant semi-gastronomique</strong> situé au <strong class="font-bold">cœur de la Vieille Ville de Nancy</strong>, offrant une expérience culinaire de qualité. Nous mettons un point d'honneur à travailler avec des <strong class="font-bold">produits frais</strong> et des <strong class="font-bold">producteurs locaux</strong> pour garantir une qualité irréprochable à nos plats ! Notre équipe de cuisine allie <strong class="font-bold">savoir-faire</strong> et <strong class="font-bold">créativité</strong> pour vous faire découvrir de nouvelles saveurs et des dressages élaborés.
+        </p>
       </div>
     </div>
   
     <div class="flex justify-center items-center h-24 w-full mb-24 space-x-24">
       <div class="space-y-8 flex justify-center items-center flex-col">
-        <button class="rounded h-full w-48 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 text-white font-light text-sm md:text-lg md:tracking-widest md:px-2 flex justify-center items-center">
-          Venir récupérer votre bon à notre restaurant
-        </button>
-        <button class="rounded h-full bg-gray-800 hover:bg-gray-700 active:bg-gray-900 text-white font-light text-sm md:text-lg md:tracking-widest md:px-2 flex justify-center items-center">
-          A l'adresse suivante: <br> 17 Grand Rue 54000 Nancy
-        </button>
-      </div>
-      <div class="space-y-8 flex justify-center items-center flex-col">
-        <button class="rounded h-full w-48 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 text-white font-light text-sm md:text-lg md:tracking-widest md:px-2 flex justify-center items-center">
-          Recevoir ou envoyer le bon !
-        </button>
+        <h2 class="flex justify-center mt-4 text-sm font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10" style="transition: all 1s ease-in-out">
+          Pour recevoir ou envoyer le bon,
+        </h2>
         <button class="rounded h-full py-4 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 text-white font-light text-sm md:text-lg md:tracking-widest md:px-2 flex justify-center items-center" @click="afficherFormulaire = true">
           Je remplis le formulaire !
         </button>
@@ -53,16 +48,6 @@
               type="text"
               id="senderName"
               v-model="senderName"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="senderAdress" class="block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
-            <input
-              type="text"
-              id="senderAdress"
-              v-model="senderAdress"
               required
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
@@ -133,6 +118,26 @@
           </div>
         </div>
         </div>
+        <!-- <div class="mb-4">
+            <label for="senderAdress" class="block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
+            <input
+              type="text"
+              id="senderAdress"
+              v-model="senderAdress"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div> -->
+          <div class="mb-4">
+            <label for="senderAdress" class="text-center block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
+            <input
+              type="text"
+              id="senderAdress"
+              v-model="senderAdress"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
           <div class="mb-4">
             <label for="montant" class="text-center block text-gray-700 text-sm font-bold mb-2">Montant du bon : (en €)</label>
             <input
