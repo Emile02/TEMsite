@@ -17,7 +17,7 @@ const routes = [
   },
   {
     path: '/letem54/accueil',
-    component: AccueilSite
+    component: LoadingSite
   },
   {
     path: '/letem54/menu',
