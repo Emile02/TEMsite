@@ -1,4 +1,8 @@
-on: push
+on:
+  push:
+    paths:
+      - 'FRONTEND/dist/'
+
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
