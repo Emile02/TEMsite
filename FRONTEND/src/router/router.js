@@ -12,7 +12,7 @@ import EvenementPage from '../views/EvenementPage.vue';
 
 const routes = [
   {
-    path: '/letem54/',
+    path: '/',
     component: LoadingSite
   },
   {
