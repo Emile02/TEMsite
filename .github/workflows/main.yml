@@ -14,3 +14,4 @@ jobs:
         server: 195.35.49.175
         username: u219389025
         password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: "FRONTEND/dist/*"
