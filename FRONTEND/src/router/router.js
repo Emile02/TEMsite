@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoadingSite from '../views/LoadingSite.vue';
-import AccueilSite from '../views/AccueilSite.vue';
+// import AccueilSite from '../views/AccueilSite.vue';
 import MenuSite from '../views/MenuOnClick.vue';
 import FormulaireReservation from '../views/PageReservationTable.vue';
 import GaleriePhotos from '../views/GaleriePhotos.vue';
