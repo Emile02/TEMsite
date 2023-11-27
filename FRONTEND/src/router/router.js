@@ -18,43 +18,43 @@ const routes = [
     component: LoadingSite
   },
   {
-    path: '/letem54/accueil',
+    path: '/accueil',
     component: AccueilSite
   },
   {
-    path: '/letem54/menu',
+    path: '/menu',
     component: MenuSite
   },
   {
-    path: '/letem54/reservation',
+    path: '/reservation',
     component: FormulaireReservation
   },
   {
-    path: '/letem54/galerie-photos',
+    path: '/galerie-photos',
     component: GaleriePhotos
   },
   {
-    path: '/letem54/galerie-photos2',
+    path: '/galerie-photos2',
     component: GaleriePhotos
   },
   {
-    path: '/letem54/cartes-menu-restaurant-le-TEM',
+    path: '/cartes-menu-restaurant-le-TEM',
     component: cartesMenu
   },
   {
-    path: '/letem54/reserver-une-table',
+    path: '/reserver-une-table',
     component: ReserverUneTable
   },
   {
-    path: '/letem54/offrir-un-bon-cadeau',
+    path: '/offrir-un-bon-cadeau',
     component: OffrirUnBonCadeau
   },
   {
-    path: '/letem54/acces-restaurant-le-tem-nancy',
+    path: '/acces-restaurant-le-tem-nancy',
     component: RestaurantAcces
   },
   {
-    path: '/letem54/evenements-restaurant-le-tem',
+    path: '/evenements-restaurant-le-tem',
     component: EvenementPage
   }
 ];
@@ -62,10 +62,6 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  transition: {
-    name: 'view-transition',
-    mode: 'fade'
-  }
 });
 
 export default router;
