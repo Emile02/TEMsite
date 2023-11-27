@@ -14,10 +14,6 @@ import EvenementPage from '../views/EvenementPage.vue';
 
 const routes = [
   {
-    path: '/',
-    component: LoadingSite
-  },
-  {
     path: '/letem54/accueil',
     component: LoadingSite
   },
