@@ -18,43 +18,43 @@ const routes = [
     component: LoadingSite
   },
   {
-    path: '/accueil',
+    path: '/letem54/accueil',
     component: AccueilSite
   },
   {
-    path: '/menu',
+    path: '/letem54/menu',
     component: MenuSite
   },
   {
-    path: '/reservation',
+    path: '/letem54/reservation',
     component: FormulaireReservation
   },
   {
-    path: '/galerie-photos',
+    path: '/letem54/galerie-photos',
     component: GaleriePhotos
   },
   {
-    path: '/galerie-photos2',
+    path: '/letem54/galerie-photos2',
     component: GaleriePhotos
   },
   {
-    path: '/cartes-menu-restaurant-le-TEM',
+    path: '/letem54/cartes-menu-restaurant-le-TEM',
     component: cartesMenu
   },
   {
-    path: '/reserver-une-table',
+    path: '/letem54/reserver-une-table',
     component: ReserverUneTable
   },
   {
-    path: '/offrir-un-bon-cadeau',
+    path: '/letem54/offrir-un-bon-cadeau',
     component: OffrirUnBonCadeau
   },
   {
-    path: '/acces-restaurant-le-tem-nancy',
+    path: '/letem54/acces-restaurant-le-tem-nancy',
     component: RestaurantAcces
   },
   {
-    path: '/evenements-restaurant-le-tem',
+    path: '/letem54/evenements-restaurant-le-tem',
     component: EvenementPage
   }
 ];
