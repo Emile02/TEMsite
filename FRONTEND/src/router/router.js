@@ -9,7 +9,6 @@ import ReserverUneTable from '../views/ReserverUneTable.vue';
 import OffrirUnBonCadeau from '../views/OffrirUnBonCadeau.vue';
 import RestaurantAcces from '../views/RestaurantAcces.vue';
 import EvenementPage from '../views/EvenementPage.vue';
-import VueRouter from 'vue-router';
 
 const routes = [
   {
