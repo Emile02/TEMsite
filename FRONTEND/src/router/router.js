@@ -32,10 +32,6 @@ const routes = [
     component: GaleriePhotos
   },
   {
-    path: '/letem54/galerie-photos2',
-    component: GaleriePhotos
-  },
-  {
     path: '/letem54/cartes-menu-restaurant-le-TEM',
     component: cartesMenu
   },

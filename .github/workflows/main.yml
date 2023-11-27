@@ -8,6 +8,7 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.event.path == '.github/workflows/main.yml' # Replace avec le nom de ton fichier de workflow
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
