@@ -24,7 +24,7 @@
     "stylehacks": "^6.0.0",
     "twilio": "^4.11.2",
     "vue": "^3.2.36",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

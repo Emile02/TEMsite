@@ -1,3 +1,5 @@
+//router.js
+
 import { createRouter, createWebHistory } from 'vue-router';
 import LoadingSite from '../views/LoadingSite.vue';
 // import AccueilSite from '../views/AccueilSite.vue';
