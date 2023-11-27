@@ -2,7 +2,7 @@
 
 import { createRouter, createWebHistory } from 'vue-router';
 import LoadingSite from '../views/LoadingSite.vue';
-// import AccueilSite from '../views/AccueilSite.vue';
+import AccueilSite from '../views/AccueilSite.vue';
 import MenuSite from '../views/MenuOnClick.vue';
 import FormulaireReservation from '../views/PageReservationTable.vue';
 import GaleriePhotos from '../views/GaleriePhotos.vue';
@@ -14,8 +14,12 @@ import EvenementPage from '../views/EvenementPage.vue';
 
 const routes = [
   {
-    path: '/letem54/accueil',
+    path: '/',
     component: LoadingSite
+  },
+  {
+    path: '/letem54/accueil',
+    component: AccueilSite
   },
   {
     path: '/letem54/menu',
