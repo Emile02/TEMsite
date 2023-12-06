@@ -18,7 +18,7 @@
     </div>
     <div class="w-full h-[40rem] mb-10 flex flex-row px-24 space-x-4">
     <div class="h-full w-1/3 relative group">
-        <img src="https://drdh.fr/4I8A4039.jpg" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
+        <img src="http://localhost:8080/4I8A4039.jpg" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
         <div class="absolute inset-x-0 top-4 group-hover:top-12 flex justify-center items-center flex-col opacity-100 text-white font-bold" style="transition:all .5s ease-in-out">
             <span class="border-2 w-64 border-white"></span>
             <p class="text-xl uppercase md:text-2xl lg:text-3xl">MENU DU MIDI</p>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="h-full w-1/3 relative group">
-        <img src="https://drdh.fr/4I8A4126.jpg" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
+        <img src="http://localhost:8080/4I8A4126.jpg" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
         <div class="absolute inset-x-0 bottom-4 group-hover:bottom-12 flex justify-center items-center flex-col opacity-100 text-white font-bold" style="transition:all .5s ease-in-out">
             <span class="border-2 w-[22rem] border-white"></span>
             <p class="text-xl uppercase md:text-2xl lg:text-3xl">TABLE DES DESSERTS</p>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="h-full w-1/3 relative group">
-        <img src="https://drdh.fr/4I8A4081.JPEG" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
+        <img src="http://localhost:8080/4I8A4081.JPEG" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
         <div class="absolute inset-x-0 top-4 group-hover:top-12 flex justify-center flex-col items-center opacity-100 text-white font-bold" style="transition:all .5s ease-in-out">
             <span class="border-2 w-64 border-white"></span>
             <p class="text-xl uppercase md:text-2xl lg:text-3xl">MENU DU SOIR</p>

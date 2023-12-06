@@ -10,7 +10,7 @@
                         <h1 @click="navigateToView('/letem54/offrir-un-bon-cadeau')">Offrir un bon cadeau<i class="logo mx-2 fas fa-caret-right fa-lg"></i></h1>
                     </button>
                 </div>
-                    <a href="https://drdh.fr/letem54/accueil" class="flex justify-center hover:scale-90" style="transition:all .5s ease-in-out">
+                    <a href="http://localhost:8080/letem54/accueil" class="flex justify-center hover:scale-90" style="transition:all .5s ease-in-out">
                         <img src="../../public/LOGO_BLANC.svg" alt="logo" class="w-30 md:w-52 h-32 md:h-52">
                     </a>
                 <div class="text-white flex flex-col items-center md:pl-44">
@@ -32,7 +32,7 @@
             </div>
         <div class="w-full pt-6 flex flex-row items-center justify-center text-white pl-24 pr-24">
             <div class="flex flex-col md:flex-row md:tracking-wide items-center">
-                <a href="https://drdh.fr/letem54/accueil">
+                <a href="http://localhost:8080/letem54/accueil">
                     <button>
                         <h1 @click="navigateToView('/letem54/accueil')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide">Accueil</h1>
                     </button>

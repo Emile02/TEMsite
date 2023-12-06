@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full  bg-black h-[20rem] lg:h-[35rem] xl:h-[50rem]">
+    <div class="w-full  bg-black h-[30rem] lg:h-[25rem] xl:h-[50rem]">
         <img class="w-full h-full object-cover" :src="currentImage" alt="Image 1">
     </div>
 </template>
@@ -10,10 +10,10 @@
       return {
         currentIndex: 0,
         images: [
-            "https://drdh.fr/4I8A4126.jpg",
-            "https://drdh.fr/4I8A4115.jpg",
-            "https://drdh.fr/4I8A4085.jpg",
-            "https://drdh.fr/4I8A4033.jpg",
+            "http://localhost:8080/4I8A4126.jpg",
+            "http://localhost:8080/4I8A4115.jpg",
+            "http://localhost:8080/4I8A4085.jpg",
+            "http://localhost:8080/4I8A4033.jpg",
         // more images here ...
         ],
         currentUrl: window.location.href,

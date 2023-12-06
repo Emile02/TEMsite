@@ -11,4 +11,4 @@ npm run serve
 ```
 ### Go to website
 
-https://drdh.fr/letem54/
+http://localhost:8080/letem54/

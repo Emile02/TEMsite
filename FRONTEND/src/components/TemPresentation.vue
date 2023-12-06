@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-5 md:mb-10 lg:mb-20 pt-10">
+    <div class="mb-7 md:mb-10 lg:mb-20 animate-fade" :class="{ 'active': isInViewport }">
         <h1 class="flex justify-center mt-10 text-xl font-bold md:text-2xl lg:text-3xl md:mt-10 lg:mt-20 xl:text-black" style="transition:all 1s ease-in-out">Restaurant Le TEM</h1>
         <h1 class="flex justify-center text-xl font-bold md:text-2xl lg:text-3xl" style="transition:all 1s ease-in-out">NANCY</h1>
         <h2 class="flex justify-center mt-4 text-xl font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10" style="transition:all 1s ease-in-out">Restaurant avec terrasse à nancy
@@ -20,7 +20,7 @@
     </div>
 </template>
 
-<style>
+<style focus>
 
 /* hover effect 1 */
 /* a {
@@ -112,4 +112,55 @@ a:hover {
   box-shadow: inset 200px 0 0 0 #54b3d6;;
 } */
 
+/* CSS pour l'animation */
+
+.animate-fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.animate-fade.active {
+  opacity: 1;
+}
+
+
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      isInViewport: false,
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll(); // Vérification initiale au chargement de la page
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const element = this.$el;
+      if (this.isElementPartiallyInViewport(element)) {
+        if (!this.isInViewport) {
+          this.isInViewport = true;
+        }
+      } else {
+        this.isInViewport = false; // Réinitialiser le suivi de visibilité lorsque le composant sort de la vue
+      }
+    },
+    isElementPartiallyInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      return (
+        rect.bottom >= 0 &&
+        rect.right >= 0 &&
+        rect.top <= windowHeight &&
+        rect.left <= window.innerWidth
+      );
+    },
+  },
+};
+</script>
