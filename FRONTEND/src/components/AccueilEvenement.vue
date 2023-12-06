@@ -8,7 +8,7 @@
               <div class="flex align-items mt-10 pl-5 md:pl-10 mb-2">
                   <img src="../../public/LOGO_NOIR.svg" alt="LOGO COMPLET LE TEM" class="h-full max-h-10">
                   <button>
-                    <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/evenements-restaurant-le-tem" data-replace="Nos Evènements" class="mt-2 text-lg font-light uppercase"><span>Nos Evènements</span></a></h1>
+                    <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="https://drdh.fr/letem54/evenements-restaurant-le-tem" data-replace="Nos Evènements" class="mt-2 text-lg font-light uppercase"><span>Nos Evènements</span></a></h1>
                   </button>
               </div>
           </div>
@@ -18,7 +18,7 @@
           
         </div>
         <div class="w-10/12 h-80 md:h-[25rem] lg:h-[40rem] bg-red-200">
-            <img class="image-to-change w-full h-full object-cover" src="http://localhost:8080/4I8A4099.jpg" alt="Image 1">
+            <img class="image-to-change w-full h-full object-cover" src="https://drdh.fr/4I8A4099.jpg" alt="Image 1">
         </div>
         <div class="w-1/12 h-80 md:h-[25rem] lg:h-[40rem] bg-white md:bg-transparent flex justify-center items-center">
           
@@ -87,10 +87,10 @@ a:hover span {
         clipPathStyle: "",
         currentIndex: 0,
       images: [
-        "http://localhost:8080/4I8A4099.jpg",
-        "http://localhost:8080/4I8A4077.jpg",
-        "http://localhost:8080/4I8A4041.jpg",
-        "http://localhost:8080/4I8A4081.jpg",
+        "https://drdh.fr/4I8A4099.jpg",
+        "https://drdh.fr/4I8A4077.jpg",
+        "https://drdh.fr/4I8A4041.jpg",
+        "https://drdh.fr/4I8A4081.jpg",
       ],
       clicked: false,
       };
