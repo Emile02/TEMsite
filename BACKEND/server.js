@@ -5,7 +5,7 @@ const cors = require('cors');
 const readDir = require('./readdir.js');
 
 const app = express();
-
+require('dotenv').config();
 const connectDB = require('./config/db.config.js');
 
 var corsOptions = {
@@ -40,53 +40,115 @@ const transporter = nodemailer.createTransport({
   port: 587,
   auth: {
     user: 'corviniemile@gmail.com',
-    pass: 'FxD9RTOnZ7szyCUQ'
+    pass: process.env.NODEMAILER_MDP
   }
+});
+
+// test mon transport de mail
+transporter.verify(function(error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Server is ready to take our messages");
+
+    }
 });
 
 
 app.post('/api/TEM/giftcard', (req, res) => {
 
-    // mail 1 = Envoi d'un mail au client qui offre les informations pour la carte cadeau
-    if (req.body.sendEmailToGiftReveiver === false) {
-        const sendMailToGiftSendOnly = {
-            from: 'corviniemile@gmail.com',
-            to: req.body.email,
-            subject: 'Vous avez commandé une carte cadeau au restaurant Le TEM',
-            // Vous allez la recevoir par courrier postal dans les prochains jours.
-            text: JSON.stringify(req.body)
-        };
-    } else if (req.body.sendEmailToGiftReveiver === true) {
-        const sendWarnMailToGiftSender = {
-            from: 'corviniemile@gmail.com',
-            to: req.body.email,
-            subject: 'Vous avez offert une carde cardeau au restaurant Le TEM à ' + req.body.prenom + ' ' + req.body.nom + ' !',
-            // Vous allez la recevoir par courrier postal dans les prochains jours.
-            text: JSON.stringify(req.body)
-        };
-        const sendWarnMailToGiftReceiver = {
-            from: 'corviniemile@gmail.com',
-            to: req.body.emailReceiver,
-            subject: req.body.prenom + ' ' + req.body.nom + ' ' + 'vous offre une carde cardeau au restaurant Le TEM !',
-            // Vous allez la recevoir par courrier postal dans les prochains jours.
-            text: JSON.stringify(req.body)
-        };
+    // mail 1 = Envoi d'un mail au resto pour lui notifier d'envoyer la carte cadeau
+    const sendEmailToRestaurant = transporter.sendMail({
+      from: 'corviniemile@gmail.com', // Adresse de l'expéditeur
+      to: req.body.senderEmail, // Adresse du restaurant destinataire
+      subject: 'Demande de bons cadeaux', // Objet du message
+      html: `
+        <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
+          <h2 style="text-align: center; color: #ea5a47;">Demande de bons cadeaux</h2>
+          <p>Bonjour,</p>
+          <p>Une demande de bons cadeaux a été soumise pour votre restaurant. Voici les détails :</p>
+          
+          <h3>Détails de l'expéditeur :</h3>
+          <ul>
+            <li><strong>Nom de l'expéditeur:</strong> ${req.body.senderName} ${req.body.senderLastname}</li>
+            <li><strong>Téléphone de l'expéditeur:</strong> ${req.body.senderPhone}</li>
+            <li><strong>Email de l'expéditeur:</strong> ${req.body.senderEmail}</li>
+          </ul>
+    
+          <h3>Détails du destinataire du bon cadeau :</h3>
+          <ul>
+            <li><strong>Nom du destinataire:</strong> ${req.body.receiverName} ${req.body.receiverLastname}</li>
+            <li><strong>Email du destinataire:</strong> ${req.body.receiverEmail}</li>
+          </ul>
+    
+          <p>Montant du bon cadeau : ${req.body.montant} euros</p>
+          <p>Commentaire de l'expéditeur : ${req.body.comment}</p>
+    
+          <p>Merci de préparer le bon cadeau pour l'envoi à l'adresse suivante :  <strong>${ req.body.senderAdress } </strong>.</p>
+    
+          <p>Cordialement,</p>
+          <p>Votre équipe.</p>
+        </div>
+      `
+    });
+    
+
+      // mail 2 = Envoi d'un mail au client pour lui notifier de son envoi
+    const mailToGiftSender = transporter.sendMail({
+        from: 'corviniemile@gmail.com', // sender address
+        to: req.body.senderEmail, // list of receivers
+        subject: 'Vous avez commandé un bon cadeau au restaurant le TEM', // Objet du message
+          html: `
+            <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
+              <h2 style="text-align: center; color: #ea5a47;">Achat d'un bon cadeau</h2>
+              <p>Bonjour, ${req.body.senderName} ${req.body.senderLastname}</p>
+              <p>Vous venez de commander une carte cadeau dans notre restaurant Le TEM pour ${req.body.receiverName} ${req.body.receiverLastname}.</p>
+
+              <p>Vous recevez ce mail pour vous avertir que nous avons bien reçu votre demande et que nous la traiterons dans les plus brefs délais.</p>
+              <ul>
+              <li>Montant du bon cadeau : ${req.body.montant} euros</li>
+              <li>Votre commentaire : ${req.body.comment}</li>
+              </ul>
+
+              <p>Vous recevrez un mail dès que nous aurons envoyé le bon cadeau à l'adresse suivante : ${req.body.senderAdress}.</p>
+
+              <p>Cordialement,</p>
+              <p>L'équipe du restaurant le TEM.</p>
+            </div>
+          `
+          });
+
+      // mail 3 = Envoi d'un mail au client pour lui qu'il reçoit le cadeau chez lui
+    if (req.body.receiverEmail != '') {
+        const mailToGiftReceiver = transporter.sendMail({
+          from: 'corviniemile@gmail.com', // sender address
+          to: req.body.receiverEmail, // list of receivers
+          subject: 'Vous avez reçu un bon cadeau au restaurant le TEM', // Objet du message
+            html: `
+              <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
+                <h2 style="text-align: center; color: #ea5a47;">Achat d'un bon cadeau</h2>
+                <p>Bonjour, ${req.body.receiverName} ${req.body.receiverLastname}</p>
+                <p>Vous venez de recevoir une carte cadeau dans notre restaurant Le TEM par ${req.body.senderName} ${req.body.senderLastname}.</p>
+  
+                <p>Vous recevez ce mail pour vous avertir que nous avons bien reçu votre demande et que nous la traiterons dans les plus brefs délais.</p>
+                <ul>
+                <li>Montant du bon cadeau : ${req.body.montant} euros</li>
+                <li>Message: ${req.body.comment}</li>
+                </ul>
+  
+                <p>Vous recevrez un mail dès que nous aurons envoyé le bon cadeau à l'adresse suivante : ${req.body.senderAdress}.</p>
+  
+                <p>Cordialement,</p>
+                <p>L'équipe du restaurant le TEM.</p>
+              </div>
+            `
+            });
     }
+    
+    res.status(201).json({ message: 'E-mail enregistrée avec succès.' });
 
     console.log("req.body", req.body);
-    // mail 2 = envoi d'un mail à la personne qui recois et un mail à la personne qui à envoyé pour lui notifier de son envois
-
-    // transporter.sendMail(mailOptions, (error, info) => {
-    //     if (error) {
-    //         console.log('Erreur lors de l\'envoi de l\'e-mail :', error);
-    //     } else {
-    //         console.log('E-mail envoyé avec succès :', info.response);
-    //     }
-    // });
-
-    res.status(201).json({ message: 'Carte cadeau envoyée avec succès.' });
 });
-
 
 let photoDir = readDir('./public');
 console.log("photoDir", photoDir);

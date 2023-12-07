@@ -104,7 +104,7 @@
               type="checkbox"
               id="sendEmailToGiftReceiver"
               v-model="sendEmailToGiftReceiver"
-              value="dog"/>
+              />
           </div>
           <div :class="{'invisible' : !sendEmailToGiftReceiver}" class="mb-4">
             <label for="receiverEmail" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
@@ -112,22 +112,11 @@
               type="text"
               id="receiverEmail"
               v-model="receiverEmail"
-              required
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
         </div>
         </div>
-        <!-- <div class="mb-4">
-            <label for="senderAdress" class="block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
-            <input
-              type="text"
-              id="senderAdress"
-              v-model="senderAdress"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div> -->
           <div class="mb-4">
             <label for="senderAdress" class="text-center block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
             <input
@@ -159,7 +148,7 @@
             />
           </div>
           
-          <div class="flex flex-row space-x-4 flex items-center justify-center">
+          <div class="flex flex-row space-x-4 items-center justify-center">
           <div class="flex items-center justify-center">
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Envoyer</button>
           </div>
@@ -210,23 +199,23 @@
           sendEmailToGiftReceiver: this.sendEmailToGiftReceiver,
         };
         
-        this.senderLastname = "";
-        this.senderName = "";
-        this.senderAdress = "";
-        this.telephone = "";
-        this.senderEmail = "";
-        this.montant = "";
-        this.comment = "";
-        this.receiverLastname = "";
-        this.receiverName = "";
-        this.receiverEmail = "";
+        // this.senderLastname = "";
+        // this.senderName = "";
+        // this.senderAdress = "";
+        // this.senderPhone = "";
+        // this.senderEmail = "";
+        // this.montant = "";
+        // this.comment = "";
+        // this.receiverLastname = "";
+        // this.receiverName = "";
+        // this.receiverEmail = "";
         this.showReceiverEmail = false;
         this.sendEmailToGiftReceiver = false;
 
         DataService.sendGiftCard(data);
         // console.log('Formulaire soumis');
 
-        this.afficherFormulaire = false;
+        // this.afficherFormulaire = false;
       }
     },
     watch: {
