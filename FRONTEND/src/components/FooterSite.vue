@@ -1,19 +1,19 @@
 <template>
     <footer class="bg-gray-800 w-full h-fit flex flex-col items-center pb-5">
             <div class="pt-2 md:pt-5 flex flex-col items-center md:flex-row text-white">
-                <div class="flex flex-col pb-2 md:pr-44">
+                <div class="flex flex-col pb-2 lg:pr-44" style="transition:all .5s ease-in-out">
                     <h1 class="underline underline-offset-8 mb-3 font-bold text-xl">Réserver & Offrir:</h1>
-                    <button class="text-l hover:text-yellow-200 my-1" style="transition:all .2s ease-in-out">
+                    <button class="text-l hover:text-yellow-200 my-1" style="transition:all .5s ease-in-out">
                         <h1 @click="navigateToView('/letem54/reserver-une-table')"><i class="invisible">_</i>Réserver une table <i class="logo mx-2 fas fa-caret-right fa-lg"></i></h1>
                     </button>
-                    <button class="text-l hover:text-yellow-200 mt-1" style="transition:all .2s ease-in-out">
+                    <button class="text-l hover:text-yellow-200 mt-1" style="transition:all .5s ease-in-out">
                         <h1 @click="navigateToView('/letem54/offrir-un-bon-cadeau')">Offrir un bon cadeau<i class="logo mx-2 fas fa-caret-right fa-lg"></i></h1>
                     </button>
                 </div>
                     <a href="http://localhost:8080/letem54/accueil" class="flex justify-center hover:scale-90" style="transition:all .5s ease-in-out">
                         <img src="../../public/LOGO_BLANC.svg" alt="logo" class="w-30 md:w-52 h-32 md:h-52">
                     </a>
-                <div class="text-white flex flex-col items-center md:pl-44">
+                <div class="text-white flex flex-col items-center lg:pl-44" style="transition:all .5s ease-in-out">
                         <h1 class="font-bold text-xl">Restaurant Le TEM</h1>
                         <a href="https://maps.app.goo.gl/tC83ytDFqjCsFo8z8" target="_blank"><h1 class="text-l underline">17 Grande Rue</h1></a>
                         <h1 class="text-l">54000 NANCY</h1>

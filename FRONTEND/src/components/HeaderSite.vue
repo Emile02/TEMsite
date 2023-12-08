@@ -28,7 +28,7 @@
     </header>
     <div v-if="showmenu" class="menu-slide">
       <div class="z-20 fixed top-[72px] opacity-95 h-48 border-2 border-black w-full bg-white flex justify-center items-center">
-        <ul class="flex flex-row space-x-8 text-xl font-bold">
+        <ul class="flex flex-col md:flex-row space-x-8 text-xl font-bold">
           <button @click="navigateToView('/letem54/accueil')"><li>
             <h1 class="text-black hover:text-tem-yellow" :class="{'text-tem-yellow': currentUrl === 'http://localhost:8080/letem54/accueil'}">Accueil</h1>
           </li></button>

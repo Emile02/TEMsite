@@ -1,5 +1,5 @@
 <template>
-  <div class="newsletter-bg bg-[#778DA9] sm:pt-3 sm:pb-3 md:pt-5 md:pb-5 xl:pt-10 xl:pb-10 w-[100%] h-[15rem] flex flex-col justify-center">
+  <div class="newsletter-bg bg-[#778DA9] sm:pt-3 sm:pb-3 md:pt-5 md:pb-5 xl:pt-10 xl:pb-10 w-[100%] h-[20rem] flex flex-col justify-center">
   <div class="flex flex-row mx-auto">
     <h1 class="font-thin text-3xl text-white text-center sm:text-lg tracking-wider mb-2 md:text-xl lg:text-2xl xl:text-4xl  hover:text:2xl xl:mb-2">Recevez en exclusivité nos prochains menus !</h1>
 </div>
@@ -10,6 +10,7 @@
           <h1>S'inscrire</h1>
         </button>
       </div>
+      <vue-friendly-captcha class="w-full" sitekey="FCMLP1VQ48JLJF8O" language="fr"/>
       <div class="mt-1">
         <input type="checkbox" id="checkConfidentiality" name="politiqueConfidentialite" required>
         <label class="ml-2 font-thin" for="checkConfidentiality"></label>
@@ -21,8 +22,12 @@
 
 <script>
 import DataService from "../services/DataService.js"
+import VueFriendlyCaptcha from '@somushq/vue3-friendly-captcha';
 
 export default {
+  components: {
+      VueFriendlyCaptcha,
+  },
   name: 'NewsletterForm',
   methods: {
     handleSubmit(event) {

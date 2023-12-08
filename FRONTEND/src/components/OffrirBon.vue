@@ -150,6 +150,8 @@
               </div>
             </div>
           </div>
+          <vue-friendly-captcha class="flex justify-center" sitekey="FCMLP1VQ48JLJF8O" language="fr"/>
+
           <div class="flex flex-row space-x-4 items-center justify-center md:mt-5">
           <div class="flex items-center justify-center">
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Envoyer</button>
@@ -164,8 +166,12 @@
   
   <script>
   import DataService from "../services/DataService.js"
+  import VueFriendlyCaptcha from '@somushq/vue3-friendly-captcha';
 
   export default {
+    components: {
+      VueFriendlyCaptcha,
+  },
     data() {
       return {
         afficherFormulaire: false,
@@ -199,7 +205,7 @@
         this.showReceiverEmail = false;
         this.sendEmailToGiftReceiver = false;
       },
-      envoyerFormulaire() {
+      async envoyerFormulaire() {
         const data = {
           senderLastname: this.senderLastname,
           senderName: this.senderName,
@@ -214,6 +220,13 @@
           sendEmailToGiftReceiver: this.sendEmailToGiftReceiver,
         };
         
+        try {
+          DataService.sendGiftCard(data);
+        } catch (error) {
+          console.error('Error sending gift card:', error);
+        }
+        
+
         this.senderLastname = "";
         this.senderName = "";
         this.senderAdress = "";
@@ -227,10 +240,9 @@
         this.showReceiverEmail = false;
         this.sendEmailToGiftReceiver = false;
 
-        DataService.sendGiftCard(data);
-        // console.log('Formulaire soumis');
+        // DataService.sendGiftCard(data);
 
-        // this.afficherFormulaire = false;
+        this.afficherFormulaire = false;
       }
     },
     watch: {
