@@ -9,7 +9,7 @@ require('dotenv').config();
 const connectDB = require('./config/db.config.js');
 
 var corsOptions = {
-    origin: 'http://localhost:8080'
+    origin: 'https://drdh.fr'
 };
 
 connectDB();
