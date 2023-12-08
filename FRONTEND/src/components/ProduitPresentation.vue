@@ -7,7 +7,7 @@
             <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-32 2xl:pl-60 mb-7">
                 <img src="../../public/LOGO_BLANC.svg" alt="LOGO COMPLET LE TEM" class="h-full max-h-10">
                 <button>
-                  <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/cartes-menu-restaurant-le-TEM" data-replace="Nos Cartes & Menus"><span>Nos Cartes & Menus</span></a></h1>
+                  <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/cartes-menu-restaurant-le-TEM" class="cartes" data-replace="Nos Cartes & Menus"><span>Nos Cartes & Menus</span></a></h1>
                 </button>
             </div>
         </div>
@@ -28,53 +28,53 @@
 
 <style>
 
-/* a {
-overflow: hidden;
-position: relative;
-display: inline-block;
+a.cartes {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
 }
 
-a::before,
-a::after {
-content: '';
-position: absolute;
-width: 100%;
-left: 0;
+a.cartes::before,
+a.cartes::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
-a::before {
-background-color: #000000;
-height: 2px;
-bottom: 0;
-transform-origin: 100% 50%;
-transform: scaleX(0);
-transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+a.cartes::before {
+  background-color: #000000;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
-a::after {
-content: attr(data-replace);
-height: 100%;
-top: 0;
-transform-origin: 100% 50%;
-transform: translate3d(200%, 0, 0);
-transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-color: #000000;
-}
-
-a:hover::before {
-transform-origin: 0% 50%;
-transform: scaleX(1);
-}
-a:hover::after {
-transform: translate3d(0, 0, 0);
+a.cartes::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: #000000;
 }
 
-a span {
-display: inline-block;
-transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+a.cartes:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+a.cartes:hover::after {
+  transform: translate3d(0, 0, 0);
 }
 
-a:hover span {
-transform: translate3d(-200%, 0, 0);
-} */
+a.cartes span {
+  display: inline-block;
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+a.cartes:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
 
 
 </style>

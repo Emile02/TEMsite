@@ -10,7 +10,6 @@
               </span>
               <span class="menu-text text-white ml-2 hidden md:block">Menu</span>
             </button>
-            
             <a href="http://localhost:8080/letem54/accueil" class="flex justify-center hover:scale-90" style="transition:all .5s ease-in-out">
               <img src="../../public/LOGO_BLANC_LETEM.svg" class="w-30 md:w-52 h-10" :class="{'lg:invisible' : !isLogoHidden && currentUrl !== 'http://localhost:8080/letem54/galerie-photos' && currentUrl !== 'http://localhost:8080/letem54/reserver-une-table' && currentUrl !== 'http://localhost:8080/letem54/offrir-un-bon-cadeau' && currentUrl !== 'http://localhost:8080/letem54/acces-restaurant-le-tem-nancy'}">
             </a>
@@ -23,7 +22,7 @@
         </button>
       </div>
       <img src="../../public/LOGO_BLANC.svg" all="LOGO COMPLET LE TEM" id="logo3"
-      class="hidden h-48 absolute left-1/2 transform -translate-x-1/2 z-2"
+      class="hidden h-48 absolute left-1/2 transform -translate-x-1/2 z-2 hover:scale-90"
       :class="{ 'lg:block': !isLogoHidden, 'invisible': currentUrl === 'http://localhost:8080/letem54/galerie-photos' || currentUrl === 'http://localhost:8080/letem54/reserver-une-table' || currentUrl === 'http://localhost:8080/letem54/offrir-un-bon-cadeau' || currentUrl === 'http://localhost:8080/letem54/acces-restaurant-le-tem-nancy'}"  style="bottom: -155px; transition:all .5s ease-in-out;">
     </header>
     <div v-if="showmenu" class="menu-slide">

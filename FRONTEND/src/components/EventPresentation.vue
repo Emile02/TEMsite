@@ -11,7 +11,7 @@
         <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-48 2xl:pl-72 3xl:pl-[350px]">
             <img src="../../public/LOGO_NOIR.svg" all="LOGO COMPLET LE TEM" class="h-full max-h-10 pr-2">
         <button class="w-48">
-            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a data-replace="Réserver une table" class="mt-2 text-lg font-light uppercase"><span>Réserver une table</span></a></h1>
+            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a data-replace="Réserver une table" class="event mt-2 text-lg font-light uppercase"><span>Réserver une table</span></a></h1>
         </button>
         </div>
         <h2 class="flex justify-center mt-4 text-xl font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10 mb-10" style="transition:all 1s ease-in-out">DECOUVREZ NOS EVENEMENTS</h2>

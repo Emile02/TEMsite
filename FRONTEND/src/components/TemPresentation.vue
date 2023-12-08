@@ -14,7 +14,7 @@
         <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-48 2xl:pl-72 3xl:pl-[350px]">
             <img src="../../public/LOGO_NOIR.svg" all="LOGO COMPLET LE TEM" class="h-full max-h-10 pr-2">
         <button class="w-48">
-            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a data-replace="Réserver une table"><span>Réserver une table</span></a></h1>
+            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a class="resa" data-replace="Réserver une table"><span>Réserver une table</span></a></h1>
         </button>
         </div>
     </div>
@@ -50,20 +50,20 @@ a:hover::before {
 
 /* hover effect 2 */
 
-/* a {
+ a.resa {
   overflow: hidden;
   position: relative;
   display: inline-block;
 }
 
-a::before,
-a::after {
+a.resa::before,
+a.resa::after {
   content: '';
   position: absolute;
   width: 100%;
   left: 0;
 }
-a::before {
+a.resa::before {
   background-color: #000000;
   height: 2px;
   bottom: 0;
@@ -71,7 +71,7 @@ a::before {
   transform: scaleX(0);
   transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
-a::after {
+a.resa::after {
   content: attr(data-replace);
   height: 100%;
   top: 0;
@@ -81,22 +81,22 @@ a::after {
   color: #000000;
 }
 
-a:hover::before {
+a.resa:hover::before {
   transform-origin: 0% 50%;
   transform: scaleX(1);
 }
-a:hover::after {
+a.resa:hover::after {
   transform: translate3d(0, 0, 0);
 }
 
-a span {
+a.resa span {
   display: inline-block;
   transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-a:hover span {
+a.resa:hover span {
   transform: translate3d(-200%, 0, 0);
-} */
+}
 
 /* hover effect 3 */
 

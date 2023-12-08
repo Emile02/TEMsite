@@ -7,7 +7,7 @@
               <div class="flex align-items mt-10 pl-5 md:pl-10 mb-2">
                   <img src="../../public/LOGO_NOIR.svg" alt="LOGO COMPLET LE TEM" class="h-full max-h-10">
                   <button>
-                    <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/evenements-restaurant-le-tem" data-replace="Nos Evènements" class="mt-2 text-lg font-light uppercase"><span>Nos Evènements</span></a></h1>
+                    <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/evenements-restaurant-le-tem" data-replace="Nos Evènements" class="event mt-2 text-lg font-light uppercase"><span>Nos Evènements</span></a></h1>
                   </button>
               </div>
           </div>
@@ -25,20 +25,20 @@
 
 <style>
 
-/* a {
+a.event {
   overflow: hidden;
   position: relative;
   display: inline-block;
 }
 
-a::before,
-a::after {
- content: '';
+a.event::before,
+a.event::after {
+  content: '';
   position: absolute;
   width: 100%;
   left: 0;
 }
-a::before {
+a.event::before {
   background-color: #000000;
   height: 2px;
   bottom: 0;
@@ -46,7 +46,7 @@ a::before {
   transform: scaleX(0);
   transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
-a::after {
+a.event::after {
   content: attr(data-replace);
   height: 100%;
   top: 0;
@@ -56,22 +56,22 @@ a::after {
   color: #000000;
 }
 
-a:hover::before {
+a.event:hover::before {
   transform-origin: 0% 50%;
   transform: scaleX(1);
 }
-a:hover::after {
+a.event:hover::after {
   transform: translate3d(0, 0, 0);
 }
 
-a span {
+a.event span {
   display: inline-block;
   transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-a:hover span {
+a.event:hover span {
   transform: translate3d(-200%, 0, 0);
-} */
+}
 
 </style>
   
