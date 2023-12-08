@@ -17,9 +17,9 @@ export default {
       currentIndex: 0,
       interval: 3500,
       images: [
-            "http://localhost:8080/4I8A4028.jpg",
-            "http://localhost:8080/4I8A4054.jpg",
-            "http://localhost:8080/4I8A4038.jpg",
+            "https://drdh.fr/4I8A4028.jpg",
+            "https://drdh.fr/4I8A4054.jpg",
+            "https://drdh.fr/4I8A4038.jpg",
         ],
     };
   },

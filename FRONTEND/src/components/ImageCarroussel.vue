@@ -10,10 +10,10 @@
       return {
         currentIndex: 0,
         images: [
-            "http://localhost:8080/4I8A4126.jpg",
-            "http://localhost:8080/4I8A4115.jpg",
-            "http://localhost:8080/4I8A4085.jpg",
-            "http://localhost:8080/4I8A4033.jpg",
+            "https://drdh.fr/4I8A4126.jpg",
+            "https://drdh.fr/4I8A4115.jpg",
+            "https://drdh.fr/4I8A4085.jpg",
+            "https://drdh.fr/4I8A4033.jpg",
         // more images here ...
         ],
         currentUrl: window.location.href,
