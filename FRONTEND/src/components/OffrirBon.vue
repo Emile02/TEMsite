@@ -18,137 +18,139 @@
         <h2 class="flex justify-center mt-4 text-sm font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10" style="transition: all 1s ease-in-out">
           Pour recevoir ou envoyer le bon,
         </h2>
-        <button class="rounded h-full py-4 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 text-white font-light text-sm md:text-lg md:tracking-widest md:px-2 flex justify-center items-center" @click="afficherFormulaire = true">
+        <button class="rounded h-full py-4 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 text-white font-light text-sm md:text-lg md:tracking-widest md:px-2 flex justify-center items-center" @click="afficherFormulaire = !afficherFormulaire" v-if="!afficherFormulaire">
           Je remplis le formulaire !
         </button>
       </div>
     </div>
   
     
-    <div v-if="afficherFormulaire" class="fixed inset-0 flex items-center justify-center z-50">
-      <div class="modal">
-        <form @submit.prevent="envoyerFormulaire" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <h1 class="text-2xl mb-4 text-center">Formulaire de bon cadeau</h1>
-          <div class="flex flex-row space-x-4 items-center">
+    <div v-if="afficherFormulaire">
+      <h1 class="text-2xl mb-4 text-center">Formulaire de bon cadeau</h1>
+        <form @submit.prevent="envoyerFormulaire" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post">
+          <div class="flex flex-col md:flex-row md:space-x-14 justify-center">
             <div class="#1">
-          <h2 class="text-xl font-bold mb-4 text-center">Vos Informations:</h2>
-          <div class="mb-4">
-            <label for="senderLastname" class="block text-gray-700 text-sm font-bold mb-2">Nom :</label>
-            <input
-              type="text"
-              id="senderLastname"
-              v-model="senderLastname"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
+              <h2 class="text-xl font-bold mb-4 text-center">Vos Informations:</h2>
+              <div class="mb-4">
+                <label for="senderLastname" class="block text-gray-700 text-sm font-bold mb-2">Nom :</label>
+                  <input
+                    placeholder="Search for anything..."
+                    type="text"
+                    id="senderLastname"
+                    v-model="senderLastname"
+                    required
+                    class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                  />
+              </div>
+              <div class="mb-4">
+                <label for="senderName" class="block text-gray-700 text-sm font-bold mb-2">Prénom :</label>
+                <input
+                  type="text"
+                  id="senderName"
+                  v-model="senderName"
+                  required
+                  class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                />
+              </div>
+              <div class="mb-4">
+                <label for="senderPhone" class="block text-gray-700 text-sm font-bold mb-2">Numéro de téléphone :</label>
+                <input
+                  type="tel"
+                  id="senderPhone"
+                  v-model="senderPhone"
+                  placeholder="0XXXXXXXXX"
+                  pattern="[0-9]{10}"
+                  required
+                  class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                />
+              </div>
+              <div class="mb-4">
+                <label for="senderEmail" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                <input
+                  type="email"
+                  id="senderEmail"
+                  v-model="senderEmail"
+                  pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                  required
+                  class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                />
+              </div>
+            </div>
+            <div class="#2">
+              <h2 class="text-xl font-bold mb-4 text-center">Ses Informations:</h2>
+              <div class="mb-4">
+                <label for="receiverLastname" class="block text-gray-700 text-sm font-bold mb-2">Nom :</label>
+                <input
+                  type="text"
+                  id="receiverLastname"
+                  v-model="receiverLastname"
+                  required
+                  class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                />
+              </div>
+              <div class="mb-4">
+                <label for="receiverName" class="block text-gray-700 text-sm font-bold mb-2">Prénom :</label>
+                <input
+                  type="text"
+                  id="receiverName"
+                  v-model="receiverName"
+                  required
+                  class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                />
+              </div>
+              <div class="mb-4 flex justify-center">
+                <label for="sendEmailToGiftReceiver" class="text-sm pr-2" title="Nous avertirons votre gifted de son cadeau!">Avertir le destinaire ?</label>
+                <input
+                  type="checkbox"
+                  id="sendEmailToGiftReceiver"
+                  v-model="sendEmailToGiftReceiver"
+                  />
+              </div>
+              <div :class="{'invisible' : !sendEmailToGiftReceiver}" class="mb-4">
+                <label for="receiverEmail" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                <input
+                  type="text"
+                  id="receiverEmail"
+                  v-model="receiverEmail"
+                  class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                />
+              </div>
+            </div>
+            <div class="#3">
+              <h2 class="text-xl font-bold mb-4 text-center">Informations complémentaires</h2>
+              <div class="mb-4">
+                <label for="senderAdress" class="text-center block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
+                <input
+                  type="text"
+                  id="senderAdress"
+                  v-model="senderAdress"
+                  required
+                  class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                />
+              </div>
+              <div class="mb-4">
+                <label for="montant" class="text-center block text-gray-700 text-sm font-bold mb-2">Montant du bon : (en €)</label>
+                <input
+                  type="number"
+                  id="montant"  
+                  v-model="montant"
+                  required
+                  class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                />
+              </div>
+              <div class="mb-4">
+                <label for="comment" class="text-center block text-gray-700 text-sm font-bold mb-2">Commentaire</label>
+                <input
+                  type="text"
+                  id="comment"  
+                  v-model="comment"
+                  required
+                  class="outline-none w-full bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+                />
+              </div>
+            </div>
           </div>
-          <div class="mb-4">
-            <label for="senderName" class="block text-gray-700 text-sm font-bold mb-2">Prénom :</label>
-            <input
-              type="text"
-              id="senderName"
-              v-model="senderName"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="senderPhone" class="block text-gray-700 text-sm font-bold mb-2">Numéro de téléphone :</label>
-            <input
-              type="tel"
-              id="senderPhone"
-              v-model="senderPhone"
-              placeholder="0XXXXXXXXX"
-              pattern="[0-9]{10}"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="senderEmail" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-            <input
-              type="email"
-              id="senderEmail"
-              v-model="senderEmail"
-              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-        </div>
-        <div class="#2">
-          <h2 class="text-xl font-bold mb-4 text-center">Ses Informations:</h2>
-          <div class="mb-4">
-            <label for="receiverLastname" class="block text-gray-700 text-sm font-bold mb-2">Nom :</label>
-            <input
-              type="text"
-              id="receiverLastname"
-              v-model="receiverLastname"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="receiverName" class="block text-gray-700 text-sm font-bold mb-2">Prénom :</label>
-            <input
-              type="text"
-              id="receiverName"
-              v-model="receiverName"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div class="mb-4 flex justify-center">
-            <label for="sendEmailToGiftReceiver" class="text-sm pr-2" title="Nous avertirons votre gifted de son cadeau!">Avertir le destinaire ?</label>
-            <input
-              type="checkbox"
-              id="sendEmailToGiftReceiver"
-              v-model="sendEmailToGiftReceiver"
-              />
-          </div>
-          <div :class="{'invisible' : !sendEmailToGiftReceiver}" class="mb-4">
-            <label for="receiverEmail" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-            <input
-              type="text"
-              id="receiverEmail"
-              v-model="receiverEmail"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-        </div>
-        </div>
-          <div class="mb-4">
-            <label for="senderAdress" class="text-center block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
-            <input
-              type="text"
-              id="senderAdress"
-              v-model="senderAdress"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="montant" class="text-center block text-gray-700 text-sm font-bold mb-2">Montant du bon : (en €)</label>
-            <input
-              type="number"
-              id="montant"  
-              v-model="montant"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="comment" class="text-center block text-gray-700 text-sm font-bold mb-2">Commentaire</label>
-            <input
-              type="text"
-              id="comment"  
-              v-model="comment"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          
-          <div class="flex flex-row space-x-4 items-center justify-center">
+          <div class="flex flex-row space-x-4 items-center justify-center md:mt-5">
           <div class="flex items-center justify-center">
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Envoyer</button>
           </div>
@@ -157,7 +159,6 @@
           </div>
         </div>
         </form>
-      </div>
     </div>
   </template>
   
@@ -184,6 +185,20 @@
     },
     
     methods: {
+      eraseFormValues() {
+        this.senderLastname = "";
+        this.senderName = "";
+        this.senderAdress = "";
+        this.senderPhone = "";
+        this.senderEmail = "";
+        this.montant = "";
+        this.comment = "";
+        this.receiverLastname = "";
+        this.receiverName = "";
+        this.receiverEmail = "";
+        this.showReceiverEmail = false;
+        this.sendEmailToGiftReceiver = false;
+      },
       envoyerFormulaire() {
         const data = {
           senderLastname: this.senderLastname,
@@ -199,16 +214,16 @@
           sendEmailToGiftReceiver: this.sendEmailToGiftReceiver,
         };
         
-        // this.senderLastname = "";
-        // this.senderName = "";
-        // this.senderAdress = "";
-        // this.senderPhone = "";
-        // this.senderEmail = "";
-        // this.montant = "";
-        // this.comment = "";
-        // this.receiverLastname = "";
-        // this.receiverName = "";
-        // this.receiverEmail = "";
+        this.senderLastname = "";
+        this.senderName = "";
+        this.senderAdress = "";
+        this.senderPhone = "";
+        this.senderEmail = "";
+        this.montant = "";
+        this.comment = "";
+        this.receiverLastname = "";
+        this.receiverName = "";
+        this.receiverEmail = "";
         this.showReceiverEmail = false;
         this.sendEmailToGiftReceiver = false;
 
