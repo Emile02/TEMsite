@@ -14,7 +14,7 @@
         <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-48 2xl:pl-72 3xl:pl-[350px]">
             <img src="../../public/LOGO_NOIR.svg" all="LOGO COMPLET LE TEM" class="h-full max-h-10 pr-2">
         <button class="w-48">
-            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/reserver-une-table" class="resa" data-replace="Réserver une table"><span>Réserver une table</span></a></h1>
+            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a href="https://drdh.fr/letem54/reserver-une-table" class="resa" data-replace="Réserver une table"><span>Réserver une table</span></a></h1>
         </button>
         </div>
     </div>
