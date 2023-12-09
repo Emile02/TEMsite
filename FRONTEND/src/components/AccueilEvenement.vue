@@ -29,6 +29,7 @@ a.event {
   overflow: hidden;
   position: relative;
   display: inline-block;
+  white-space: nowrap;
 }
 
 a.event::before,

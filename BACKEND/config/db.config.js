@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-const Tem = require('../models/tem.model.js');
-
 const connectDB = async () => {
     try {
         await mongoose.connect("mongodb://localhost:27017/tem_db");

@@ -1,7 +1,6 @@
     const Tem = require('../models/tem.model.js');
     // Create and Save a new Tutorial
     exports.create = async (req, res) => {
-        console.log("req.body", req.body.email);
         if (!req.body.email) {
             res.status(400).send({ message: "Content can not be empty!" });
             return;

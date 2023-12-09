@@ -26,8 +26,6 @@ app.get('/', (req, res) => {
 const controlller = require('./controllers/controller.js');
 
 app.post('/api/TEM', (req, res) => {
-    const newEmail = req.body.email;
-    console.log("emaiiiiiiiiiiiiiil", newEmail);
     controlller.create(req);
     res.status(201).json({ message: 'Adresse e-mail enregistrée avec succès.' });
 });
@@ -53,7 +51,6 @@ transporter.verify(function(error, success) {
 
     }
 });
-
 
 app.post('/api/TEM/giftcard', (req, res) => {
 
@@ -144,7 +141,7 @@ app.post('/api/TEM/giftcard', (req, res) => {
             `
             });
     }
-    
+
     res.status(201).json({ message: 'E-mail enregistrée avec succès.' });
 
     console.log("req.body", req.body);

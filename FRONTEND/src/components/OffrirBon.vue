@@ -150,7 +150,7 @@
               </div>
             </div>
           </div>
-          <vue-friendly-captcha class="flex justify-center" sitekey="FCMLP1VQ48JLJF8O" language="fr"/>
+          <vue-friendly-captcha class="hidden" sitekey="FCMLP1VQ48JLJF8O" language="fr"/>
 
           <div class="flex flex-row space-x-4 items-center justify-center md:mt-5">
           <div class="flex items-center justify-center">
@@ -220,12 +220,7 @@
           sendEmailToGiftReceiver: this.sendEmailToGiftReceiver,
         };
         
-        try {
-          DataService.sendGiftCard(data);
-        } catch (error) {
-          console.error('Error sending gift card:', error);
-        }
-        
+        DataService.sendGiftCard(data);
 
         this.senderLastname = "";
         this.senderName = "";

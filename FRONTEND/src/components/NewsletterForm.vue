@@ -10,7 +10,7 @@
           <h1>S'inscrire</h1>
         </button>
       </div>
-      <vue-friendly-captcha class="w-full" sitekey="FCMLP1VQ48JLJF8O" language="fr"/>
+      <vue-friendly-captcha class="hidden" sitekey="FCMLP1VQ48JLJF8O" language="fr"/>
       <div class="mt-1">
         <input type="checkbox" id="checkConfidentiality" name="politiqueConfidentialite" required>
         <label class="ml-2 font-thin" for="checkConfidentiality"></label>
