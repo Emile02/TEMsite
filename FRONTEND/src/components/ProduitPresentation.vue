@@ -7,7 +7,7 @@
             <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-32 2xl:pl-60 mb-7">
                 <img src="../../public/LOGO_BLANC.svg" alt="LOGO COMPLET LE TEM" class="h-full max-h-10">
                 <button>
-                  <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="https://drdh.fr/letem54/cartes-menu-restaurant-le-TEM" class="cartes" data-replace="Nos Cartes & Menus"><span>Nos Cartes & Menus</span></a></h1>
+                  <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/cartes-menu-restaurant-le-TEM" class="cartes" data-replace="Nos Cartes & Menus"><span>Nos Cartes & Menus</span></a></h1>
                 </button>
             </div>
         </div>
@@ -87,10 +87,10 @@ export default {
       clipPathStyle: "",
       currentIndex: 0,
     images: [
-      "https://drdh.fr/4I8A4099.jpg",
-      "https://drdh.fr/4I8A4077.jpg",
-      "https://drdh.fr/4I8A4041.jpg",
-      "https://drdh.fr/4I8A4081.jpg",
+      "http://localhost:8080/4I8A4099.jpg",
+      "http://localhost:8080/4I8A4077.jpg",
+      "http://localhost:8080/4I8A4041.jpg",
+      "http://localhost:8080/4I8A4081.jpg",
     ],
     clicked: false,
     };

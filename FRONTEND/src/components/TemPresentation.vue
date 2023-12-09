@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-7 md:mb-10 lg:mb-20 animate-fade" :class="{ 'active': isInViewport }">
+    <div class="mb-7 md:pt-10 md:mt-10 md:mb-10 lg:mb-20 animate-fade" :class="{ 'active': isInViewport }">
         <h1 class="flex justify-center mt-10 text-xl font-bold md:text-2xl lg:text-3xl md:mt-10 lg:mt-20 xl:text-black" style="transition:all 1s ease-in-out">Restaurant Le TEM</h1>
         <h1 class="flex justify-center text-xl font-bold md:text-2xl lg:text-3xl" style="transition:all 1s ease-in-out">NANCY</h1>
         <h2 class="flex justify-center mt-4 text-xl font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10" style="transition:all 1s ease-in-out">Restaurant avec terrasse à nancy
@@ -14,7 +14,7 @@
         <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-48 2xl:pl-72 3xl:pl-[350px]">
             <img src="../../public/LOGO_NOIR.svg" all="LOGO COMPLET LE TEM" class="h-full max-h-10 pr-2">
         <button class="w-48">
-            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a class="resa" data-replace="Réserver une table"><span>Réserver une table</span></a></h1>
+            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/reserver-une-table" class="resa" data-replace="Réserver une table"><span>Réserver une table</span></a></h1>
         </button>
         </div>
     </div>

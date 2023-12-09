@@ -11,14 +11,14 @@
         <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-48 2xl:pl-72 3xl:pl-[350px]">
             <img src="../../public/LOGO_NOIR.svg" all="LOGO COMPLET LE TEM" class="h-full max-h-10 pr-2">
         <button class="w-48">
-            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a data-replace="Réserver une table" class="cartes mt-2 text-lg font-light uppercase"><span>Réserver une table</span></a></h1>
+            <h1 class="text-lg -ml-4 font-light uppercase text-tem-yellow"><a href="http://localhost:8080/letem54/reserver-une-table" data-replace="Réserver une table" class="cartes mt-2 text-lg font-light uppercase"><span>Réserver une table</span></a></h1>
         </button>
         </div>
         <h2 class="flex justify-center mt-4 text-xl font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10 mb-10" style="transition:all 1s ease-in-out">DECOUVREZ NOS CARTES & MENUS</h2>
     </div>
     <div class="w-full h-[40rem] mb-10 flex flex-row px-24 space-x-4">
     <div class="h-full w-1/3 relative group">
-        <img src="https://drdh.fr/4I8A4039.jpg" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
+        <img src="http://localhost:8080/4I8A4039.jpg" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
         <div class="absolute inset-x-0 top-4 group-hover:top-12 flex justify-center items-center flex-col opacity-100 text-white font-bold" style="transition:all .5s ease-in-out">
             <span class="border-2 w-64 border-white"></span>
             <p class="text-xl uppercase md:text-2xl lg:text-3xl">MENU DU MIDI</p>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="h-full w-1/3 relative group">
-        <img src="https://drdh.fr/4I8A4126.jpg" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
+        <img src="http://localhost:8080/4I8A4126.jpg" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
         <div class="absolute inset-x-0 bottom-4 group-hover:bottom-12 flex justify-center items-center flex-col opacity-100 text-white font-bold" style="transition:all .5s ease-in-out">
             <span class="border-2 w-[22rem] border-white"></span>
             <p class="text-xl uppercase md:text-2xl lg:text-3xl">TABLE DES DESSERTS</p>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="h-full w-1/3 relative group">
-        <img src="https://drdh.fr/4I8A4081.JPEG" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
+        <img src="http://localhost:8080/4I8A4081.JPEG" alt="photo" class="opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
         <div class="absolute inset-x-0 top-4 group-hover:top-12 flex justify-center flex-col items-center opacity-100 text-white font-bold" style="transition:all .5s ease-in-out">
             <span class="border-2 w-64 border-white"></span>
             <p class="text-xl uppercase md:text-2xl lg:text-3xl">MENU DU SOIR</p>
