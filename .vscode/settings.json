@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/e0adb2fa-3cdb-4e5a-9cdf-7a820f9f025b/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/tembackend",
+    "appService.deploySubpath": "BACKEND"
+}

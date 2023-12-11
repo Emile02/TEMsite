@@ -5,7 +5,7 @@ import store from '../store';
 
 
 const http = axios.create({
-  baseURL: "http://localhost:8081/api",
+  baseURL: "https://tembackend.azurewebsites.net/api",
   headers: {
     "Content-type": "application/json",
   }
