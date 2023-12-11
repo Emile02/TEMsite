@@ -33,8 +33,8 @@ app.post('/api/TEM', (req, res) => {
     res.status(201).json({ message: 'Adresse e-mail enregistrée avec succès.' });
 });
 
-app.post('/api/TEM/checkPassword', async (req, res) => {  
-  await user.loginUser(req, res);
+app.post('/api/TEM/checkPassword', (req, res) => {
+  user.loginUser(req, res);
 });
 
 const nodemailer = require('nodemailer');
