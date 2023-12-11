@@ -49,7 +49,7 @@ export default {
       emailsNewsletter: [],
       imageAvailable: [],
       show: false,
-      imageUrl: localStorage.getItem('imageUrl') || 'http://localhost:8080/4I8A4126.jpg',
+      imageUrl: localStorage.getItem('imageUrl') || 'https://drdh.fr/4I8A4126.jpg',
     };
   },
   methods: {
@@ -69,7 +69,7 @@ export default {
       }
     },
     changeImage() {
-      const url = prompt('URL de l\'image', 'http://localhost:8080/');
+      const url = prompt('URL de l\'image', 'https://drdh.fr/');
       if (!url) return;
       this.imageUrl = url;
       localStorage.setItem('imageUrl', this.imageUrl);
