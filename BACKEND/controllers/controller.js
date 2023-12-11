@@ -1,5 +1,6 @@
+    const User = require("../models/user.model.js");
     const Tem = require('../models/tem.model.js');
-    // Create and Save a new Tutorial
+
     exports.create = async (req, res) => {
         if (!req.body.email) {
             res.status(400).send({ message: "Content can not be empty!" });
@@ -16,19 +17,12 @@
     };
 
     exports.findAll = async (req, res) => {
-        
-    };
-
-
-    // Update a Tutorial by the id in the request
-    exports.update = (req, res) => {
-        if (!req.body.email) {
-            res.status(400).send({ message: "Content can not be empty!" });
-            return;
+        try {
+            const data = await Tem.find({});
+            res.send(data);
+        } catch (error) {
+            console.error('Error:', error);
         }
-        Tem.findOneAndUpdate(req.params.email, {
-            email: req.body.email,
-        })
     };
 
     // Delete a Tutorial with the specified id in the request

@@ -24,10 +24,15 @@ app.get('/', (req, res) => {
 });
 
 const controlller = require('./controllers/controller.js');
+const user = require('./controllers/auth.js');
 
 app.post('/api/TEM', (req, res) => {
     controlller.create(req);
     res.status(201).json({ message: 'Adresse e-mail enregistrée avec succès.' });
+});
+
+app.post('/api/TEM/checkPassword', async (req, res) => {
+    user.loginUser(req, res);
 });
 
 const nodemailer = require('nodemailer');
@@ -147,12 +152,24 @@ app.post('/api/TEM/giftcard', (req, res) => {
     console.log("req.body", req.body);
 });
 
+app.post('/api/newsletter', (req, res) => {
+    console.log("req.body envoi email", req.body);
+});
+
 let photoDir = readDir('./public');
 console.log("photoDir", photoDir);
 
 app.get('/api/photos', (req, res) => {
     res.json(photoDir);
 });
+
+const auth = require('./middlewares/auth.js');
+
+app.get('/api/newsletter', auth.verifyToken, auth.verifyValidity, (req, res) => {
+  controlller.findAll(req, res);
+});
+
+const bcrypt = require("bcrypt");
 
 const PORT = process.env.PORT || 8081;
 

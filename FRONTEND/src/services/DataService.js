@@ -10,6 +10,18 @@ class TutorialDataService {
     return http.post("/TEM", { email: data }, { headers: { 'Content-Type': 'application/json' }});
   }
 
+  checkPassword(data) {    
+    return http.post("/TEM/checkPassword", { password: data} , { headers: { 'Content-Type': 'application/json' }});
+  }
+
+  sendNewsletterMail() {
+    return http.get("/newsletter");
+  }
+
+  sendNewsletterMailToMarius(data) {
+    return http.post("/newsletter/", data, { headers: { 'Content-Type': 'application/json' }});
+  }
+
   sendGiftCard(data) {
     return http.post("/TEM/giftcard", data, { headers: { 'Content-Type': 'application/json' }});
   }
