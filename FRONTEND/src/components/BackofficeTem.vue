@@ -76,6 +76,7 @@ export default {
     },
     async loginUser() {
       try {
+        console.log("je lance l'app front")
         const response = await DataService.checkPassword(this.password);
         if (response.status === 200 && response.data.token) {
           this.showBackoffice = true;
