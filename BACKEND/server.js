@@ -9,7 +9,9 @@ require('dotenv').config();
 const connectDB = require('./config/db.config.js');
 
 var corsOptions = {
-    origin: 'http://localhost:8080'
+    origin: 'https://drdh.fr',
+    "Access-Control-Allow-Origin": "https://drdh.fr",
+
 };
 
 connectDB();
@@ -32,7 +34,8 @@ app.post('/api/TEM', (req, res) => {
 });
 
 app.post('/api/TEM/checkPassword', async (req, res) => {
-    user.loginUser(req, res);
+  console.log("tu essaye de te co");
+  // user.loginUser(req, res);
 });
 
 const nodemailer = require('nodemailer');

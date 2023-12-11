@@ -8,6 +8,7 @@ const http = axios.create({
   baseURL: "https://tembackend.azurewebsites.net/api",
   headers: {
     "Content-type": "application/json",
+    "Access-Control-Allow-Origin": "https://drdh.fr",
   }
 });
 
