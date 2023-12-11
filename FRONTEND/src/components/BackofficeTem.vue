@@ -85,7 +85,7 @@ export default {
         }
       } catch (error) {
         console.error(error);
-        alert('Une erreur s\'est produite');
+        alert('Une erreur s\'est produite sur l`app front');
       }
     },
     async sendNewsletterMail() {

@@ -8,19 +8,21 @@ const app = express();
 require('dotenv').config();
 const connectDB = require('./config/db.config.js');
 
-var corsOptions = {
-    origin: 'https://drdh.fr',
-};
+
 
 connectDB();
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'https://drdh.fr', // Autoriser les requêtes depuis ce domaine spécifique
+  methods: ['GET', 'POST'], // Autoriser seulement certains types de requêtes
+  credentials: true // Autoriser l'envoi des cookies et des en-têtes d'authentification
+}));
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to Emile application.' });
+    res.json({ message: 'Welcome to Emile application hihihi.' });
 });
 
 const controlller = require('./controllers/controller.js');
@@ -31,9 +33,8 @@ app.post('/api/TEM', (req, res) => {
     res.status(201).json({ message: 'Adresse e-mail enregistrée avec succès.' });
 });
 
-app.post('/api/TEM/checkPassword', async (req, res) => {
-  // console.log("tu essaye de te co");
-  user.loginUser(req, res);
+app.post('/api/TEM/checkPassword', async (req, res) => {  
+  await user.loginUser(req, res);
 });
 
 const nodemailer = require('nodemailer');

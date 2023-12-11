@@ -9,6 +9,7 @@ const Controller = require("../controllers/controller.js");
 
 // login a user
 exports.loginUser = async (req, res) => {
+    console.log("loginUser");
     try {
       const password = req.body.password;    
   
