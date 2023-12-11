@@ -11,6 +11,7 @@ class TutorialDataService {
   }
 
   checkPassword(data) {    
+    console.log("checkPassword function", data);
     return http.post("/TEM/checkPassword", { password: data} , { headers: { 'Content-Type': 'application/json' }});
   }
 
