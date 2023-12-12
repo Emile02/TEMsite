@@ -30,7 +30,10 @@
         <h3 class="mb-4">Entrez le mot de passe</h3>
         <input v-model="password" type="password" class="border p-2 mb-2 w-full">
         <br><br>
+        <div class="flex flex-row space-x-4">
         <button @click="loginUser" class="bg-blue-500 text-white px-4 py-2 rounded">Valider</button>
+        <div v-if="loading" class="loader"></div>
+      </div>
       </div>
     </div>
   </div>
@@ -50,6 +53,7 @@ export default {
       imageAvailable: [],
       show: false,
       imageUrl: localStorage.getItem('imageUrl') || 'https://drdh.fr/4I8A4126.jpg',
+      loading: false,
     };
   },
   methods: {
@@ -76,10 +80,11 @@ export default {
     },
     async loginUser() {
       try {
-        console.log("je lance l'app front")
+        this.loading = true;
         const response = await DataService.checkPassword(this.password);
         if (response.status === 200 && response.data.token) {
           this.showBackoffice = true;
+          this.loading = false;
           store.commit('SET_TOKEN', response.data.token);
         } else {
           alert('Mot de passe incorrect');
@@ -112,13 +117,22 @@ export default {
       }
     }
   },
-  created() {
-    // this.getAllPhotos();
-  }
 };
 </script>
   
 <style>
-/* Styles Tailwind CSS ou classes personnalisées ici */
+.loader {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 </style>
   
