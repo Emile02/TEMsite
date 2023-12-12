@@ -97,13 +97,9 @@ export default {
     },
     async sendNewsletterMail() {
       try {
-        // Efface le presse-papiers
         await navigator.clipboard.writeText('');
 
         const response = await DataService.sendNewsletterMail();
-        console.log('response', response);
-        console.log('response.data', response.data);
-        console.log('response.data.data', response.data.length  );
         if (response) {
           this.emailsNewsletter = [];
           response.data.forEach(element => {
