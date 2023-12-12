@@ -13,14 +13,14 @@
         </div>
     </div>
     <div class="flex md:mt-[4.4rem] lg:mt-[8rem] md:w-1/2">
-      <div :class="{'hover:border-2 hover:border-black' : clicked}" @clicked="handleButtonMobileClick" class="click-to-left w-1/12 h-80 md:h-[25rem] lg:h-[40rem] bg-white hover:border-2 hover:border-black md:bg-transparent md:hover:border-0 flex justify-center items-center">
-        <i class="fa-sharp fa-solid fa-chevron-left md:hidden" style="color: #000000;"></i>
+      <div @clicked="handleButtonMobileClick" class="click-to-left w-1/12 h-80 md:h-[25rem] lg:h-[40rem] bg-white  md:bg-transparent flex justify-center items-center">
+        
       </div>
       <div class="w-10/12 h-80 md:h-[25rem] lg:h-[40rem] bg-red-200">
           <img class="image-to-change w-full h-full object-cover" :src="currentImage" alt="Image 1">
       </div>
-      <div class="click-to-right w-1/12 h-80 md:h-[25rem] lg:h-[40rem] bg-white md:bg-transparent md:hover:border-0 hover:border-2 hover:border-black flex justify-center items-center">
-        <i class="fa-sharp fa-solid fa-chevron-right md:hidden" style="color: #000000;"></i>
+      <div class="click-to-right w-1/12 h-80 md:h-[25rem] lg:h-[40rem] bg-white md:bg-transparent flex justify-center items-center">
+        
       </div>
     </div>
   </div>

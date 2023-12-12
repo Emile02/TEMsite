@@ -5,7 +5,7 @@
             <h1 class="text-center">Restaurant Le TEM</h1>
             <h1 class="text-center">17 Grand Rue</h1>
             <h1 class="text-center">54000 Nancy</h1>
-            <h1 class="text-red-200 text-sm font-light text-[#bc9b5d]"><a href="https://maps.app.goo.gl/tC83ytDFqjCsFo8z8" data-replace="Calculez votre itinéraire" class=" mt-2 text-sm font-light "><span>Calculez votre itinéraire</span></a></h1>
+            <h1 class="text-red-200 text-sm font-light"><a href="https://maps.app.goo.gl/tC83ytDFqjCsFo8z8" data-replace="Calculez votre itinéraire" class=" mt-2 text-sm font-light "><span>Calculez votre itinéraire</span></a></h1>
       </button>
     </div>
   </template>
