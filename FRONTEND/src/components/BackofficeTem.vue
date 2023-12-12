@@ -78,7 +78,6 @@ export default {
       try {
         console.log("je lance l'app front")
         const response = await DataService.checkPassword(this.password);
-        console.log("response", response)
         if (response.status === 200 && response.data.token) {
           this.showBackoffice = true;
           store.commit('SET_TOKEN', response.data.token);

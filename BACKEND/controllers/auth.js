@@ -9,9 +9,8 @@ const Controller = require("../controllers/controller.js");
 
 // login a user
 exports.loginUser = async (req, res) => {
-    console.log("loginUser");
     try {
-      const password = req.body.password;    
+      const password = req.body.password;
   
       // Check if email and password are provided
       if (!password) {
@@ -20,7 +19,7 @@ exports.loginUser = async (req, res) => {
           .send({ message: "Email and password are required" });
       }      
 
-      const user = await User.findOne({_id: "65763110197e6f4687fdac1d"});
+      const user = await User.findOne({_id: "6577baf113f440e6e445c56d"});
       console.log("user", user);
       if (!user) {
         return res.status(404).send({ message: "User not found" });
@@ -45,6 +44,6 @@ exports.loginUser = async (req, res) => {
       
       res.status(200).send({ message: "Login successful", token });
     } catch (error) {
-      res.status(500).send({ message: "Server error", error});
+      res.status(500).send({ message: "Server error puto", error});
     }
   };
