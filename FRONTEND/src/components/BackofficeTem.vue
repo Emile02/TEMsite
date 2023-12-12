@@ -54,6 +54,7 @@ export default {
       show: false,
       imageUrl: localStorage.getItem('imageUrl') || 'https://drdh.fr/4I8A4126.jpg',
       loading: false,
+      countMail: 0,
     };
   },
   methods: {
@@ -102,12 +103,18 @@ export default {
         const response = await DataService.sendNewsletterMail();
         console.log('response', response);
         console.log('response.data', response.data);
+        console.log('response.data.data', response.data.length  );
         if (response) {
           this.emailsNewsletter = [];
           response.data.forEach(element => {
+            this.countMail++;
             this.emailsNewsletter.push(element.email);
           });
-
+        
+            if (this.countMail === 0) {
+              alert('Aucun email à copier');
+              return;
+            }
           await navigator.clipboard.writeText(this.emailsNewsletter.join('\n'));
           alert('Emails copiés dans le presse-papier');
         } else {
