@@ -15,8 +15,12 @@ import BackOffice from '../components/BackofficeTem.vue';
 
 const routes = [
   {
-    path: '/' || '/letem54',
+    path: '/',
     component: LoadingSite
+  },
+  {
+    path: '/letem54',
+    redirect: '/'
   },
   {
     path: '/letem54/accueil',
