@@ -1,11 +1,11 @@
 <template>
     <div class="presentation flex flex-col md:flex-row-reverse mt-10">
-      <div class="md:mb-10 lg:mb-20 -mt-4 md:mt-10 lg:mt-8 w-full md:w-1/2 lg:h-[45rem] mb-10 md:bg-zinc-800  ">
+      <div class="md:mb-10 lg:mb-20 -mt-4 md:mt-10 lg:mt-8 w-full md:w-1/2 lg:h-[45rem] mb-10 md:bg-zinc-800 md:items-center">
         <div class="">
-            <h1 class="pt-5 text-xl md:text-2xl lg:pr-20 lg:pt-40 font-light uppercase pl-5 md:pl-10 lg:pl-20 text-black xl:pl-32 2xl:pl-60 2xl:pr-60 2xl:pt-42">Organisation d'Evenements</h1>
-            <p class="pt-5 pl-5 md:pl-10 lg:pl-20 text-black text-justify pr-5 md:pr-10 lg:pr-20 xl:pl-32 xl:pr-32 2xl:pl-60 2xl:pr-60">Notre restaurant s’inscrit depuis son ouverture dans un accueil tout particulier aux <strong class="font-bold">cocktails dînatoire</strong> pour les <strong class="font-bold">pots de thèses</strong> célébrants les fins d’études des jeunes diplômés. Nous proposons une déclinaison totale de notre carte (en <strong class="font-bold">accord dans la saison</strong>, avec les produits frais que nous travaillons à l’année) en version individuelle.</p>
+            <h1 class="pt-5 text-xl md:text-2xl lg:pr-20 lg:pt-40 font-light uppercase pl-5 md:pl-10 lg:pl-20 text-black md:text-white xl:pl-32 2xl:pl-60 2xl:pr-60 2xl:pt-42">Organisation d'Evenements</h1>
+            <p class="pt-5 pl-5 md:pl-10 lg:pl-20 text-black md:text-white text-justify pr-5 md:pr-10 lg:pr-20 xl:pl-32 xl:pr-32 2xl:pl-60 2xl:pr-60">Notre restaurant s’inscrit depuis son ouverture dans un accueil tout particulier aux <strong class="font-bold">cocktails dînatoire</strong> pour les <strong class="font-bold">pots de thèses</strong> célébrants les fins d’études des jeunes diplômés. Nous proposons une déclinaison totale de notre carte (en <strong class="font-bold">accord dans la saison</strong>, avec les produits frais que nous travaillons à l’année) en version individuelle.</p>
             <div class="flex align-items mt-10 pl-5 md:pl-10 lg:pl-20 xl:pl-32 2xl:pl-60 mb-7">
-                <img src="../../public/LOGO_NOIR.svg" alt="LOGO COMPLET LE TEM" class="h-full max-h-10">
+                <img src="../../public/LOGO_BLANC.svg" alt="LOGO COMPLET LE TEM" class="h-full max-h-10">
                 <button>
                   <h1 class="text-lg pl-2 font-light uppercase text-tem-yellow"><a href="https://drdh.fr/letem54/cartes-menu-restaurant-le-TEM" class="cartes" data-replace="Nos Cartes & Menus"><span>Nos Cartes & Menus</span></a></h1>
                 </button>
