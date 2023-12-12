@@ -100,6 +100,8 @@ export default {
         await navigator.clipboard.writeText('');
 
         const response = await DataService.sendNewsletterMail();
+        console.log('response', response);
+        console.log('response.data', response.data);
         if (response) {
           this.emailsNewsletter = [];
           response.data.forEach(element => {
@@ -108,7 +110,7 @@ export default {
 
           await navigator.clipboard.writeText(this.emailsNewsletter.join('\n'));
           alert('Emails copiés dans le presse-papier');
-        } else if (this.emailsNewsletter.length === 0) {
+        } else {
           alert('Une erreur s\'est produite');
         }
       } catch (error) {
