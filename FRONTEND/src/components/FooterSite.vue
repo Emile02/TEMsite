@@ -34,31 +34,31 @@
             <div class="flex flex-col md:flex-row md:tracking-wide items-center">
                 <a href="https://drdh.fr/letem54/accueil">
                     <button>
-                        <h1 @click="navigateToView('/letem54/accueil')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide">Accueil</h1>
+                        <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide">Accueil</h1>
                     </button>
                 </a>
                     <span class="block md:w-0.5 md:h-5"></span>
-                <a>
+                <a href="https://drdh.fr/letem54/cartes-menu-restaurant-le-TEM">
                     <button>
-                        <h1 @click="navigateToView('/letem54/cartes-menu-restaurant-le-TEM')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Carte & Menus</h1>
+                        <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Carte & Menus</h1>
                     </button>
                 </a>
                     <span class="block md:w-0.5 md:h-5"></span>
-                <a>
+                <a href="https://drdh.fr/letem54/evenements-restaurant-le-tem">
                 <button>
-                    <h1 @click="navigateToView('/letem54/evenements-restaurant-le-tem')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Evènements</h1>
+                    <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Evènements</h1>
                 </button>
                 </a>
                     <span class="block md:w-0.5 md:h-5"></span>
-                <a>
+                <a href="https://drdh.fr/letem54/galerie-photos">
                 <button>
-                    <h1 @click="navigateToView('/letem54/galerie-photos')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Galerie Photo</h1>
+                    <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Galerie Photo</h1>
                 </button>
                 </a>
                     <span class="block md:w-0.5 md:h-5"></span>
-                <a>
+                <a href="https://drdh.fr/letem54/acces-restaurant-le-tem-nancy">
                 <button>
-                    <h1 @click="navigateToView('/letem54/acces-restaurant-le-tem-nancy')" class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Accès</h1>
+                    <h1 class="pb-1 mx-2 hover:text-yellow-200 md:tracking-wide" style="transition:all .2s ease-in-out">Accès</h1>
                 </button>
             </a>
             </div>
