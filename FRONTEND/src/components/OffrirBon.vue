@@ -34,7 +34,6 @@
               <div class="mb-4">
                 <label for="senderLastname" class="block text-gray-700 text-sm font-bold mb-2">Nom :</label>
                   <input
-                    placeholder="Search for anything..."
                     type="text"
                     id="senderLastname"
                     v-model="senderLastname"
@@ -65,7 +64,7 @@
                 />
               </div>
               <div class="mb-4">
-                <label for="senderEmail" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                <label for="senderEmail" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
                 <input
                   type="email"
                   id="senderEmail"
