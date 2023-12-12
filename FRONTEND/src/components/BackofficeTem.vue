@@ -108,7 +108,7 @@ export default {
 
           await navigator.clipboard.writeText(this.emailsNewsletter.join('\n'));
           alert('Emails copiés dans le presse-papier');
-        } else {
+        } else if (this.emailsNewsletter.length === 0) {
           alert('Une erreur s\'est produite');
         }
       } catch (error) {
@@ -122,8 +122,8 @@ export default {
   
 <style>
 .loader {
-  border: 5px solid #f3f3f3; /* Light grey */
-  border-top: 5px solid #3498db; /* Blue */
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
   border-radius: 50%;
   width: 40px;
   height: 40px;
