@@ -4,7 +4,7 @@
     <!-- Backoffice avec mot de passe -->
     <div v-if="showBackoffice">
       <button @click="sendNewsletterMail"
-        class="py-2 rounded text-white px-4 bg-red-700 hover:bg-red-500 active:bg-red-800">Appui fdp</button>
+        class="py-2 rounded text-white px-4 bg-red-700 hover:bg-red-500 active:bg-red-800">Copy Emails</button>
 
       <!-- <button @click="changeImage" class="rounded text-white px-4 bg-red-700 hover:bg-red-500 active:bg-red-800">Changer l'image</button>
         <img :src="imageUrl" alt="Image dynamique" class="rounded-lg w-20 h-20"> -->
