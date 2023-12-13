@@ -21,8 +21,8 @@
                     <div class="mt-3 flex flex-row">
                         <a href="callto:+33633295925" class="logo mx-2 fas fa-phone fa-lg"></a>
                         <a href="mailto:letem@gmail.com" class="logo mx-2 fas fa-envelope fa-lg"></a>
-                        <a href="https://www.example.com/" class="logo mx-2 fab fa-facebook fa-lg"></a>
-                        <a href="https://www.example.com/" class="logo mx-2 fab fa-tiktok fa-lg hover:color-blue"></a>
+                        <a href="https://www.facebook.com/LeTemNCY" class="logo mx-2 fab fa-facebook fa-lg"></a>
+                        <a href="https://www.instagram.com/letemnancy/" class="logo mx-2 fab fa-instagram fa-lg hover:color-blue"></a>
                     </div>
                 </div>
             </div>
