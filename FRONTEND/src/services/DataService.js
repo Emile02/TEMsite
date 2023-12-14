@@ -27,6 +27,10 @@ class TutorialDataService {
     return http.post("/TEM/giftcard", data, { headers: { 'Content-Type': 'application/json' }});
   }
 
+  displayMenu() {
+    return http.get("/TEM/displayMenu", { headers: { 'Content-Type': 'application/json' }});
+  }
+
   update(id, data) {
     return http.put(`/TEM/${id}`, data);
   }

@@ -17,7 +17,7 @@
         <h2 class="flex justify-center mt-4 text-xl font-thin uppercase text-yellow-800 md:text-2xl lg:text-3xl md:mt-6 lg:mt-10 mb-10" style="transition:all 1s ease-in-out">DECOUVREZ NOS CARTES & MENUS</h2>
     </div>
     <div class="w-full md:h-[30rem] xl:h-[45rem] mb-10 flex flex-col md:flex-row md:space-x-4 px-4">
-    <div class="h-[20rem] md:h-full w-full md:w-1/3 relative group mb-4 md:mb-0">
+    <div @click="openPDF('https://drdh.fr/MENU_TEM_MIDI.pdf')" class="h-[20rem] md:h-full w-full md:w-1/2 relative group mb-4 md:mb-0">
         <img src="https://drdh.fr/4I8A4039.jpg" alt="photo" class="md:opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out"/>
         <div class="absolute inset-x-0 top-4 md:group-hover:top-12 flex justify-center items-center flex-col opacity-100 text-white font-bold " style="transition:all 1s ease-in-out">
             <span class="border-2 w-[10.5rem] lg:w-[13rem] xl:w-[16rem] border-white"></span>
@@ -25,15 +25,8 @@
             <span class="border-2 w-[10.5rem] lg:w-[13rem] xl:w-[16rem] border-white"></span>
         </div>
     </div>
-    <div class="h-[20rem] md:h-full w-full md:w-1/3 relative group mb-4 md:mb-0">
-        <img src="https://drdh.fr/4I8A4126.jpg" alt="photo" class="md:opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out" />
-        <div class="absolute inset-x-0 top-4 md:group-hover:top-12 flex justify-center items-center flex-col opacity-100 text-white font-bold" style="transition:all 1s ease-in-out">
-            <span class="border-2 w-[14rem] lg:w-[17rem] xl:w-[22rem] border-white"></span>
-            <p class="text-xl uppercase lg:text-2xl xl:text-3xl">TABLE DES DESSERTS</p>
-            <span class="border-2 w-[14rem] lg:w-[17rem] xl:w-[22rem] border-white"></span>
-        </div>
-    </div>
-    <div class="h-[20rem] md:h-full w-full md:w-1/3 relative group">
+   
+    <div @click="openPDF('https://drdh.fr/MENU_TEM_SOIR.pdf')" class="h-[20rem] md:h-full w-full md:w-1/2 relative group">
         <img src="https://drdh.fr/4I8A4081.JPEG" alt="photo" class="md:opacity-75 hover:opacity-100 hover:cursor-pointer w-full h-full object-cover" style="transition:all 1s ease-in-out" />
         <div class="absolute inset-x-0 top-4 md:group-hover:top-12 flex justify-center items-center flex-col opacity-100 text-white font-bold" style="transition:all 1s ease-in-out">
             <span class="border-2 w-[10.5rem] lg:w-[13rem] xl:w-[16rem] border-white"></span>
@@ -44,3 +37,16 @@
 </div>
 
 </template>
+
+<script>
+
+export default {
+    name: 'CarteMenu',
+    methods: {
+        openPDF(url) {            
+            window.open(url, '_blank');
+        }
+    }
+}
+
+</script>
