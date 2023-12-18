@@ -25,7 +25,7 @@
     </div>
   
     
-    <div v-if="afficherFormulaire">
+    <div v-if="!afficherFormulaire">
       <h1 class="text-2xl mb-4 text-center">Formulaire de bon cadeau</h1>
         <form @submit.prevent="envoyerFormulaire" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post">
           <div class="flex flex-col md:flex-row md:space-x-14 justify-center">
@@ -150,7 +150,24 @@
             </div>
           </div>
           <vue-friendly-captcha class="hidden" sitekey="FCMLP1VQ48JLJF8O" language="fr"/>
-
+          <h1 class="text-2xl mb-4 text-center">Méthodes de paiement</h1>
+          <div class="flex flex-col space-y-4 items-center">
+            <label for="comment" class="text-center block text-gray-700 text-sm font-bold mb-2">Preuve de virement</label>
+            <input
+              type="file"
+              id="comment"
+              accept="application/pdf"
+              class="outline-none w-fit bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
+            />
+            <h1 class="text-xl mb-4 text-center font-normal">Ou</h1>
+            <div class="rounded border-2 shadow-inner p-4">
+              <p class=" mb-4 text-center">Sur place au:</p>
+              <p class=" mb-4 text-center">17 Grande Rue 54000 NANCY</p>
+            </div>
+            <h1 class="text-xl mb-4 text-center font-normal">Ou</h1>
+            <div id="paypal-buttons"></div>
+          </div>
+          
           <div class="flex flex-row space-x-4 items-center justify-center md:mt-5">
           <div class="flex items-center justify-center">
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Envoyer</button>
@@ -159,6 +176,7 @@
             <button @click="afficherFormulaire = false" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Annuler</button>
           </div>
         </div>
+        
         </form>
     </div>
   </template>
@@ -166,7 +184,7 @@
   <script>
   import DataService from "../services/DataService.js"
   import VueFriendlyCaptcha from '@somushq/vue3-friendly-captcha';
-
+  
   export default {
     components: {
       VueFriendlyCaptcha,
@@ -186,9 +204,12 @@
         receiverEmail: "",
         showReceiverEmail: false,
         sendEmailToGiftReceiver: false,
+        payWithIBAN: false,
+        ibanFile: "",
+        payWithPaypal: false,
+        payOnPlace: false,
       };
     },
-    
     methods: {
       eraseFormValues() {
         this.senderLastname = "";
