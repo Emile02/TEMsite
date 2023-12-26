@@ -158,12 +158,12 @@ app.post('/api/newsletter', (req, res) => {
     console.log("req.body envoi email", req.body);
 });
 
-let photoDir = readDir('./public');
-console.log("photoDir", photoDir);
+// let photoDir = readDir('./public');
+// console.log("photoDir", photoDir);
 
-app.get('/api/photos', (req, res) => {
-    res.json(photoDir);
-});
+// app.get('/api/photos', (req, res) => {
+//     res.json(photoDir);
+// });
 
 const auth = require('./middlewares/auth.js');
 

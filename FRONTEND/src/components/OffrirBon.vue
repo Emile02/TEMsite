@@ -25,9 +25,9 @@
     </div>
   
     
-    <div v-if="!afficherFormulaire">
+    <div v-if="afficherFormulaire">
       <h1 class="text-2xl mb-4 text-center">Formulaire de bon cadeau</h1>
-        <form @submit.prevent="envoyerFormulaire" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post">
+        <form @submit.prevent="envoyerFormulaire" class="px-8 pt-6 pb-8 mb-4" method="post">
           <div class="flex flex-col md:flex-row md:space-x-14 justify-center">
             <div class="#1">
               <h2 class="text-xl font-bold mb-4 text-center">Vos Informations:</h2>
@@ -152,10 +152,10 @@
           <vue-friendly-captcha class="hidden" sitekey="FCMLP1VQ48JLJF8O" language="fr"/>
           <h1 class="text-2xl mb-4 text-center">Méthodes de paiement</h1>
           <div class="flex flex-col space-y-4 items-center">
-            <label for="comment" class="text-center block text-gray-700 text-sm font-bold mb-2">Preuve de virement</label>
+            <label for="file" class="text-center block text-gray-700 text-sm font-bold mb-2">Preuve de virement</label>
             <input
               type="file"
-              id="comment"
+              id="file"
               accept="application/pdf"
               class="outline-none w-fit bg-transparent placeholder-gray-blue placeholder-opacity-50 border-b border-b-gray-blue border-opacity-50 focus:border-b-indigo-500 "
             />
@@ -165,7 +165,9 @@
               <p class=" mb-4 text-center">17 Grande Rue 54000 NANCY</p>
             </div>
             <h1 class="text-xl mb-4 text-center font-normal">Ou</h1>
-            <div id="paypal-buttons"></div>
+            <div class="flex justify-center items-center">
+              <CheckoutPayment/>
+            </div>
           </div>
           
           <div class="flex flex-row space-x-4 items-center justify-center md:mt-5">
@@ -184,10 +186,13 @@
   <script>
   import DataService from "../services/DataService.js"
   import VueFriendlyCaptcha from '@somushq/vue3-friendly-captcha';
-  
+  import CheckoutPayment from "../components/paypal/CheckoutPayment.vue";
+
+
   export default {
     components: {
       VueFriendlyCaptcha,
+      CheckoutPayment,
   },
     data() {
       return {
@@ -224,6 +229,7 @@
         this.receiverEmail = "";
         this.showReceiverEmail = false;
         this.sendEmailToGiftReceiver = false;
+        
       },
       async envoyerFormulaire() {
         const data = {
@@ -238,6 +244,7 @@
           receiverName: this.receiverName,
           receiverEmail: this.receiverEmail,
           sendEmailToGiftReceiver: this.sendEmailToGiftReceiver,
+          
         };
         
         DataService.sendGiftCard(data);
@@ -254,8 +261,7 @@
         this.receiverEmail = "";
         this.showReceiverEmail = false;
         this.sendEmailToGiftReceiver = false;
-
-        // DataService.sendGiftCard(data);
+        this.ibanFile = "";
 
         this.afficherFormulaire = false;
       }

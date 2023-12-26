@@ -70,7 +70,7 @@
   // import TemPhotos from '../components/TemPhotos.vue'
   import FooterSite from '@/components/FooterSite.vue'
   import BackToPageTop from '@/components/BackToPageTop.vue'
-  import http from "../http-common";
+  // import http from "../http-common";
 
   export default {
       name: 'GaleriePhotos',
@@ -82,27 +82,38 @@
       },
       data() {
       return {
-        photos: [],
+        photos: [
+          "https://drdh.fr/4I8A4026.jpg",
+          "https://drdh.fr/4I8A4027.jpg",
+          "https://drdh.fr/4I8A4029.jpg",
+          "https://drdh.fr/4I8A4031.jpg",
+          "https://drdh.fr/4I8A4032-1.jpg",
+          "https://drdh.fr/4I8A4047.jpg",
+          "https://drdh.fr/4I8A4055.jpg",
+          "https://drdh.fr/4I8A4060.jpg",
+          "https://drdh.fr/4I8A4074.jpg",
+          "https://drdh.fr/4I8A4033.jpg"
+        ],
         canShowPhotos: true,
       };
     },
-    methods: {
-      async getAllPhotos() {
-        try {
-          const response = await http.get("/photos");
-          console.log("response.data", response.data);
-          response.data.forEach(element => {
-            this.photos.push("https://drdh.fr/" + element);
-          });  
-        } catch (error) {
-          console.error('Error fetching photos:', error);
-          this.canShowPhotos = false;
-        }
-      }
-    },
-    created() {
-      this.getAllPhotos();
-    },
+    // methods: {
+    //   async getAllPhotos() {
+    //     try {
+    //       const response = await http.get("/photos");
+    //       console.log("response.data", response.data);
+    //       response.data.forEach(element => {
+    //         this.photos.push("https://drdh.fr/" + element);
+    //       });  
+    //     } catch (error) {
+    //       console.error('Error fetching photos:', error);
+    //       this.canShowPhotos = false;
+    //     }
+    //   }
+    // },
+    // created() {
+    //   this.getAllPhotos();
+    // },
     mounted() {
           window.scrollTo({
             top: 0,
