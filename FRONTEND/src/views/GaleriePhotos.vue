@@ -97,23 +97,6 @@
         canShowPhotos: true,
       };
     },
-    // methods: {
-    //   async getAllPhotos() {
-    //     try {
-    //       const response = await http.get("/photos");
-    //       console.log("response.data", response.data);
-    //       response.data.forEach(element => {
-    //         this.photos.push("https://drdh.fr/" + element);
-    //       });  
-    //     } catch (error) {
-    //       console.error('Error fetching photos:', error);
-    //       this.canShowPhotos = false;
-    //     }
-    //   }
-    // },
-    // created() {
-    //   this.getAllPhotos();
-    // },
     mounted() {
           window.scrollTo({
             top: 0,
