@@ -12,7 +12,7 @@ const connectDB = require('./config/db.config.js');
 
 connectDB();
 app.use(cors({
-  origin: 'https://drdh.fr', // Autoriser les requêtes depuis ce domaine spécifique
+  origin: '*', // Autoriser les requêtes depuis ce domaine spécifique
   methods: ['GET', 'POST'], // Autoriser seulement certains types de requêtes
   credentials: true // Autoriser l'envoi des cookies et des en-têtes d'authentification
 }));
@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to Emile application hihihi.' });
+    res.json({ message: 'Welcome to TEM application' });
 });
 
 const controlller = require('./controllers/controller.js');
@@ -58,14 +58,37 @@ transporter.verify(function(error, success) {
 
     }
 });
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' }); // Destination folder for uploaded files
+let uploadedFileInfo = null;
+
+app.post('/api/TEM/uploadIban', upload.single('file'), (req, res) => {
+  try {
+    const file = req.file;
+    if (!file) {
+      return res.status(400).send('No file uploaded.');
+    }
+
+    
+    uploadedFileInfo = {
+      filename: file.originalname,
+      path: file.path // Path to the uploaded file
+    };
+    console.log("uploadedFileInfo", uploadedFileInfo);
+    res.status(201).send('File uploaded successfully.');
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
 
 app.post('/api/TEM/giftcard', (req, res) => {
 
     // mail 1 = Envoi d'un mail au resto pour lui notifier d'envoyer la carte cadeau
-    const sendEmailToRestaurant = transporter.sendMail({
-      from: 'corviniemile@gmail.com', // Adresse de l'expéditeur
-      to: req.body.senderEmail, // Adresse du restaurant destinataire
-      subject: 'Demande de bons cadeaux', // Objet du message
+
+    const mailOptions = {
+      from: 'corviniemile@gmail.com',
+      to: req.body.senderEmail,
+      subject: '',
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
           <h2 style="text-align: center; color: #ea5a47;">Demande de bons cadeaux</h2>
@@ -88,13 +111,36 @@ app.post('/api/TEM/giftcard', (req, res) => {
           <p>Montant du bon cadeau : ${req.body.montant} euros</p>
           <p>Commentaire de l'expéditeur : ${req.body.comment}</p>
     
-          <p>Merci de préparer le bon cadeau pour l'envoi à l'adresse suivante :  <strong>${ req.body.senderAdress } </strong>.</p>
+          <p>Merci de préparer le bon cadeau pour l'envoi à l'adresse suivante : <strong>${req.body.senderAdress}</strong>.</p>
     
           <p>Cordialement,</p>
           <p>Votre équipe.</p>
         </div>
-      `
-    });
+      `,
+      attachments: []
+    };
+
+    if (uploadedFileInfo) {
+      mailOptions.attachments.push({
+        filename: uploadedFileInfo.filename,
+        path: uploadedFileInfo.path
+      });
+    }
+
+    if (req.body.howToPay === 'payWithIban') {
+      mailOptions.subject = 'Demande de bons cadeaux avec IBAN';
+    } else if (req.body.howToPay === 'payWithPaypal') {
+      mailOptions.subject = 'Demande de bons cadeaux avec Paypal';
+    } else if (req.body.howToPay === 'payOnPlace') {
+      mailOptions.subject = 'Demande de bons cadeaux avec Cash';
+    }
+
+
+
+    const sendEmailToRestaurant = transporter.sendMail(mailOptions);
+    // clear uploadedFileInfo
+    uploadedFileInfo = null;
+
     
 
       // mail 2 = Envoi d'un mail au client pour lui notifier de son envoi
