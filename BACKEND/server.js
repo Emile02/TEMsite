@@ -74,7 +74,7 @@ app.post('/api/TEM/uploadIban', upload.single('file'), (req, res) => {
       filename: file.originalname,
       path: file.path // Path to the uploaded file
     };
-    console.log("uploadedFileInfo", uploadedFileInfo);
+    
     res.status(201).send('File uploaded successfully.');
   } catch (error) {
     res.status(500).send(error.message);
@@ -86,8 +86,8 @@ app.post('/api/TEM/giftcard', (req, res) => {
     // mail 1 = Envoi d'un mail au resto pour lui notifier d'envoyer la carte cadeau
 
     const mailOptions = {
-      from: 'corviniemile@gmail.com',
-      to: req.body.senderEmail,
+      from: 'reservation@drdh.fr',
+      to: 'reservation@drdh.fr',
       subject: '',
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
@@ -117,7 +117,8 @@ app.post('/api/TEM/giftcard', (req, res) => {
           <p>Votre équipe.</p>
         </div>
       `,
-      attachments: []
+      attachments: [],
+      alternatives: []
     };
 
     if (uploadedFileInfo) {
@@ -127,13 +128,15 @@ app.post('/api/TEM/giftcard', (req, res) => {
       });
     }
 
-    if (req.body.howToPay === 'payWithIban') {
-      mailOptions.subject = 'Demande de bons cadeaux avec IBAN';
+    if (req.body.howToPay === 'payWithIBAN') {
+      mailOptions.subject = 'Demande de bons cadeaux - Paiement par virement bancaire';
     } else if (req.body.howToPay === 'payWithPaypal') {
-      mailOptions.subject = 'Demande de bons cadeaux avec Paypal';
+      mmailOptions.subject = 'Demande de bons cadeaux - Paiement par Paypal';
     } else if (req.body.howToPay === 'payOnPlace') {
-      mailOptions.subject = 'Demande de bons cadeaux avec Cash';
+      mailOptions.subject = 'Demande de bons cadeaux - Paiement au restaurant';
     }
+
+    console.log("req.body.howToPay", req.body.howToPay);
 
 
 
@@ -141,11 +144,9 @@ app.post('/api/TEM/giftcard', (req, res) => {
     // clear uploadedFileInfo
     uploadedFileInfo = null;
 
-    
-
       // mail 2 = Envoi d'un mail au client pour lui notifier de son envoi
     const mailToGiftSender = transporter.sendMail({
-        from: 'corviniemile@gmail.com', // sender address
+        from: 'reservation@drdh.fr', // sender address
         to: req.body.senderEmail, // list of receivers
         subject: 'Vous avez commandé un bon cadeau au restaurant le TEM', // Objet du message
           html: `
@@ -168,15 +169,16 @@ app.post('/api/TEM/giftcard', (req, res) => {
           `
           });
 
+          console.log("req.body.receiverEmail", req.body.receiverEmail);
       // mail 3 = Envoi d'un mail au client pour lui qu'il reçoit le cadeau chez lui
-    if (req.body.receiverEmail != '') {
+    if (req.body.sendEmailToGiftReceiver && req.body.receiverEmail != '') {
         const mailToGiftReceiver = transporter.sendMail({
-          from: 'corviniemile@gmail.com', // sender address
+          from: 'reservation@drdh.fr', // sender address
           to: req.body.receiverEmail, // list of receivers
           subject: 'Vous avez reçu un bon cadeau au restaurant le TEM', // Objet du message
             html: `
               <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto;">
-                <h2 style="text-align: center; color: #ea5a47;">Achat d'un bon cadeau</h2>
+                <h2 style="text-align: center; color: #ea5a47;">Réception d'un bon cadeau</h2>
                 <p>Bonjour, ${req.body.receiverName} ${req.body.receiverLastname}</p>
                 <p>Vous venez de recevoir une carte cadeau dans notre restaurant Le TEM par ${req.body.senderName} ${req.body.senderLastname}.</p>
   

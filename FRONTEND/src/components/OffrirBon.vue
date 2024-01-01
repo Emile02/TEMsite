@@ -98,7 +98,7 @@
                 />
               </div>
               <div class="mb-4 flex justify-center">
-                <label for="sendEmailToGiftReceiver" class="text-sm pr-2" title="Nous avertirons votre gifted de son cadeau!">Avertir le destinaire ?</label>
+                <label for="sendEmailToGiftReceiver" class="text-sm pr-2">Avertir le destinaire ?</label>
                 <input
                   type="checkbox"
                   id="sendEmailToGiftReceiver"
@@ -238,16 +238,16 @@
     data() {
       return {
         afficherFormulaire: false,
-        senderLastname: "michel",
-        senderName: "corvini",
-        senderAdress: "adresse",
-        senderPhone: "0671783492",
-        senderEmail: "corviniemile@gmail.com",
-        montant: 20,
-        comment: "commentaire",
-        receiverLastname: "son nom",
-        receiverName: "son prenom",
-        receiverEmail: "corviniemile@gmail.com",
+        senderLastname: "",
+        senderName: "",
+        senderAdress: "",
+        senderPhone: "",
+        senderEmail: "",
+        montant: 0,
+        comment: "",
+        receiverLastname: "",
+        receiverName: "",
+        receiverEmail: "",
         showReceiverEmail: false,
         sendEmailToGiftReceiver: false,
         ibanFile: null,
@@ -293,6 +293,7 @@
         this.receiverEmail = "";
         this.showReceiverEmail = false;
         this.sendEmailToGiftReceiver = false;
+        this.ibanFile = "";
         
       },
       async envoyerFormulaire() {
@@ -311,7 +312,7 @@
           receiverEmail: this.receiverEmail,
           sendEmailToGiftReceiver: this.sendEmailToGiftReceiver,
           fileToSend: formData,
-          howToPay: this.howToPay,
+          howToPay: this.howToPay === null ? "payWithIBAN" : this.howToPay,
         };
         
         if (this.ibanFile) {
@@ -326,24 +327,12 @@
 
         DataService.sendGiftCard(data);
 
-        // this.senderLastname = "";
-        // this.senderName = "";
-        // this.senderAdress = "";
-        // this.senderPhone = "";
-        // this.senderEmail = "";
-        // this.montant = "";
-        // this.comment = "";
-        // this.receiverLastname = "";
-        // this.receiverName = "";
-        // this.receiverEmail = "";
-        // this.showReceiverEmail = false;
-        // this.sendEmailToGiftReceiver = false;
-        // this.ibanFile = "";
+        this.eraseFormValues();
+        this.afficherFormulaire = false;
 
-        // this.afficherFormulaire = false;
       }
     },
-    created() {
+    mounted() {
       this.payWithIBAN = true;
     },
     watch: {
