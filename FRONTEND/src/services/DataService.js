@@ -23,6 +23,11 @@ class TutorialDataService {
     return http.post("/newsletter/", data, { headers: { 'Content-Type': 'application/json' }});
   }
 
+
+  uploadIBAN(formData) {
+    return http.post("/TEM/uploadIban", formData, { headers: {  'Content-Type': 'multipart/form-data' }});
+  }
+
   sendGiftCard(data) {
     return http.post("/TEM/giftcard", data, { headers: { 'Content-Type': 'application/json' }});
   }

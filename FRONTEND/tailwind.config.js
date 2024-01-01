@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       colors: {
         'tem-yellow': '#bc9b5d',
+        'tem-yellow-hover': '#a88a4a',
       },
       screens: {
         '3xl': '1600px',
