@@ -19,7 +19,7 @@
                         <h1 class="text-l">54000 NANCY</h1>
                         <h1 class="text-l">+33 3 83 32 52 62</h1>
                     <div class="mt-3 flex flex-row">
-                        <a href="callto:+33633295925" class="logo mx-2 fas fa-phone fa-lg"></a>
+                        <a href="callto:+33383325262" class="logo mx-2 fas fa-phone fa-lg"></a>
                         <a href="mailto:reservation@drdh.fr" class="logo mx-2 fas fa-envelope fa-lg"></a>
                         <a href="https://www.facebook.com/LeTemNCY" target="_blank" class="logo mx-2 fab fa-facebook fa-lg"></a>
                         <a href="https://www.instagram.com/letemnancy/" target="_blank" class="logo mx-2 fab fa-instagram fa-lg hover:color-blue"></a>
