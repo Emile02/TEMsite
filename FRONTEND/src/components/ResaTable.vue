@@ -6,7 +6,7 @@
     </div>
     <div class="flex justify-center items-center h-14 w-full mb-8 space-x-8">
         <button @click="showNumber()" class="rounded h-full w-28 md:w-44 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 text-white font-light text-sm md:text-lg md:tracking-widest md:px-2 flex justify-center items-center"><span v-if="!shownumber">Téléphone</span><span v-else>03 83 32 52 62</span></button>
-        <a class="rounded h-full w-28 md:w-44 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 text-white font-light text-sm md:text-lg md:tracking-widest md:px-2 flex justify-center items-center" href="mailto:reservation@drdh.fr">Email</a>
+        <a class="rounded h-full w-28 md:w-44 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 text-white font-light text-sm md:text-lg md:tracking-widest md:px-2 flex justify-center items-center" href="mailto:letemnancy@outlook.com">Email</a>
     </div>
 </div>
 </template>
